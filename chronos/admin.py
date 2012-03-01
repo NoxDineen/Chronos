@@ -1,5 +1,5 @@
 from django.contrib import admin
-from timekeeper.chronos import *
+from chronos.models import *
 
 class PersonAdmin(admin.ModelAdmin):
 	list_display = ('first_name', 'last_name', 'email')
@@ -9,7 +9,6 @@ class PersonAdmin(admin.ModelAdmin):
 
 class AssignmentAdmin(admin.ModelAdmin):
 	list_filter = ('date',)
-	filter_horizontal = ('people',)
 
 class RoleAdmin(admin.ModelAdmin):
 	list_display = ('name', 'icon')

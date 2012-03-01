@@ -15,19 +15,19 @@ class Person(models.Model):
 		return self.email
 
 class Assignment(models.Model):
-	date = models.DateField
+	date = models.DateField(auto_now=False)
 	person = models.ForeignKey('chronos.Person')	
 
 	class Meta:
 		unique_together = ('date', 'person')
 
 	def __unicode__(self):
-		return self.date
+		return u'%s on %s' % (self.person, self.date)
 
 class Role(models.Model):
 	name = models.CharField(max_length=255)
 	assignment = models.ManyToManyField('chronos.Assignment')
-	icon = models.ImageField(upload_to='chronos')
+	icon = models.FileField(upload_to='chronos', blank=True)
 
 	def __unicode__(self):
 		return self.name
