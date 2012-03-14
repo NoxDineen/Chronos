@@ -1,0 +1,55 @@
+{% extends "chronos/base.html" %}
+
+{% block content %} 
+
+	<h4>{{ mname }} {{ year }}</h4>
+
+	<div class="month">
+	    <table>
+
+	    <tr>
+	        <td class="empty">Mon</td>
+	        <td class="empty">Tue</td>
+	        <td class="empty">Wed</td>
+	        <td class="empty">Thu</td>
+	        <td class="empty">Fri</td>
+	        <td class="empty">Sat</td>
+	        <td class="empty">Sun</td>
+	    </tr>
+
+	    {% for week in month_days %}
+	        <tr>
+	        {% for day, assignments, current in week %}
+
+	            <!-- TD style: empty | day | current; onClick handler and highlight  -->
+	            <td class= {% if day == 0 %}"empty"{% endif %}
+	            {% if day != 0 and not current %}"day"{% endif %}
+	            {% if day != 0 and current %}"current"{% endif %}
+	            {% if day != 0 %}
+
+	                {% comment %}
+	                onClick="parent.location='{% url chronos.views.day year month day %}'"
+	                {% endcomment %}
+
+	                onMouseOver="this.bgColor='#eeeeee';"
+	                onMouseOut="this.bgColor='white';"
+	            {% endif %} >
+
+	            <!-- Day number and entry snippets -->
+	            {% if day != 0 %}
+	                {{ day }}
+	                {% for assignment in assignments %}
+	                    <br />
+	                    <b>{{ assignment.person }}</b>: {{ assignment.role }}
+	                {% endfor %}
+	            {% endif %}
+	            </td>
+	        {% endfor %}
+	        </tr>
+	    {% endfor %}
+	    </table>
+
+	    <div class="clear"></div>
+	</div>
+
+{% endblock content %}

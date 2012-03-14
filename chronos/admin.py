@@ -8,7 +8,8 @@ class PersonAdmin(admin.ModelAdmin):
 	search_fields = ('first_name',)
 
 class AssignmentAdmin(admin.ModelAdmin):
-	list_filter = ('date',)
+	list_filter = ('person', 'role')
+	date_hierarchy = 'date'
 
 class RoleAdmin(admin.ModelAdmin):
 	list_display = ('name', 'icon')
