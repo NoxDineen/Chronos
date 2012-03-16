@@ -1,7 +1,14 @@
 $(document).ready(function(){
-	$("#sidebar #is_support li").draggable({revert: true});
-	
-	$("#sidebar #is_not_support li").draggable({revert: true});
+	$("#sidebar li").draggable({revert: true});
 
-	$("#main-content month td ");
+	$("#main-content #month td").droppable({
+		hoverClass: "ui-state-active",
+		drop: function( event, ui ) {
+			$( this )
+				.addClass( "ui-state-highlight" )
+				.find( "td" )
+					.html( "Dropped!" );
+		}
+	});
+
 });

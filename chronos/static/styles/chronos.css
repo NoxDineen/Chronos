@@ -1,8 +1,8 @@
-.month table {
-		width: 90%;
+#month table {
+	width: 90%;
 	}
 	
-.month td {
+#month td {
 	width: 14%;
 	border-width: 1px;
 	border-style: dotted;
@@ -13,6 +13,7 @@
 	border-width: 1px;
 }
 
-#is_support {
+#is_support #is_not_support {
 	font-family: helvetica, tahoma, arial, sans-serif;
+	font-size: 90%;
 }
