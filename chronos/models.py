@@ -10,7 +10,7 @@ class Person(models.Model):
 		verbose_name_plural = 'people'
 
 	def __unicode__(self):
-		return self.email
+		return u'%s %s' % (self.first_name, self.last_name)
 
 class Assignment(models.Model):
 	date = models.DateField(auto_now=False)

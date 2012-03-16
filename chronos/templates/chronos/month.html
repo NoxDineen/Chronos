@@ -5,7 +5,7 @@
 	<h4>{{ mname }} {{ year }}</h4>
 
 	<div class="month">
-	    <table>
+	    <table width="95%">
 
 	    <tr>
 	        <td class="empty">Mon</td>
@@ -40,7 +40,7 @@
 	                {{ day }}
 	                {% for assignment in assignments %}
 	                    <br />
-	                    <b>{{ assignment.person }}</b>: {{ assignment.role }}
+	                    <b>{{ assignment.person }}</b>:<br /> {{ assignment.role }}
 	                {% endfor %}
 	            {% endif %}
 	            </td>
@@ -53,3 +53,21 @@
 	</div>
 
 {% endblock content %}
+
+	{% block sidebar %} 
+		<h3>Team Members</h3>
+		<div id="is_support" class="ui-widget-content">
+		<ul> {% for person in support_team %}
+			<li>{{ person.first_name }} {{ person.last_name }}</li>
+			{% endfor %}
+		</ul>
+		</div>
+		<div id="is_not_support" class="ui-widget-content">
+		<h4>Bonus Team Members</h4>
+		<ul> {% for person in not_support_team %}
+			<li>{{ person.first_name }} {{ person.last_name }}</li>
+			{% endfor %}
+		</ul>
+		</div>
+
+	{% endblock sidebar %} 

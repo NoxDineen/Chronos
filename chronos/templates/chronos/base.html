@@ -1,8 +1,12 @@
 <html>
-<head><title>{% block title %} Chronos - GJST! {% endblock title %}</title></head>
+<head>
+<title>{% block title %} Chronos - GJST! {% endblock title %}</title></head>
+<link rel="stylesheet" href="/static/styles/chronos.css" />
+<link type="text/css" href="{{ STATIC_URL }}scripts/css/black-tie/jquery-ui-1.8.18.custom.css" rel="Stylesheet" />	
+
 <body>
 	<div id="sidebar">
-		{% block sidebar %} {% endblock sidebar %} 
+		{% block sidebar %}  {% endblock sidebar %} 
 	</div>
 
 	<div id="menu">
@@ -24,8 +28,14 @@
 	</div>
 
 	<div id="footer">
-		{% block footer %} {% endblock footer %}
+		{% block footer %}
+		<p> Thanks for using Chronos. Make your <a href="https://freshbooks.wufoo.eu/forms/schedgy-20-wishlist-for-nox/">wishes</a> here. </p>
+
+		{% endblock footer %}
 	</div>
 
+	<script type="text/javascript" src="{{ STATIC_URL }}scripts/js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}scripts/js/jquery-ui-1.8.18.custom.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}scripts/chronos.js"></script>
 </body>
 </html>

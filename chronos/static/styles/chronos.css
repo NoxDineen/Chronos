@@ -1,0 +1,18 @@
+.month table {
+		width: 90%;
+	}
+	
+.month td {
+	width: 14%;
+	border-width: 1px;
+	border-style: dotted;
+	border-color: #000;
+}
+
+#footer {
+	border-width: 1px;
+}
+
+#is_support {
+	font-family: helvetica, tahoma, arial, sans-serif;
+}
