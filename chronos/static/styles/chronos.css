@@ -1,5 +1,10 @@
+#main-content {
+
+}
+
 #month table {
-	width: 90%;
+	width: 75%;
+	float: left;
 	}
 	
 #month td {
@@ -9,11 +14,21 @@
 	border-color: #000;
 }
 
-#footer {
-	border-width: 1px;
+.assignments {
+	font-size: 0.8em;
+}
+
+#sidebar {
+	float: right;
 }
 
 #is_support #is_not_support {
 	font-family: helvetica, tahoma, arial, sans-serif;
 	font-size: 90%;
+	float: left;
+}
+
+#footer {
+	border-width: 1px;
+	clear: both;
 }

@@ -3,6 +3,8 @@ from datetime import *
 import calendar
 import time
 from django.shortcuts import get_object_or_404, render_to_response, render
+from django.contrib.auth.forms import AuthenticationForm
+from django.core.urlresolvers import reverse
 
 month_names = "January February March April May June July August September October November December"
 month_names = month_names.split()

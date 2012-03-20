@@ -49,6 +49,10 @@
 {% endblock content %}
 
 	{% block sidebar %} 
+
+	{% comment %}
+	Login form needs to go here. Drag/drop functionality needs to be limited to only those logged in with manager or higher authentication.
+	{% endcomment %}
 		<h3>Team Members</h3>
 		<div id="is_support" class="ui-widget-content">
 		<ul> {% for person in support_team %}
@@ -56,8 +60,8 @@
 			{% endfor %}
 		</ul>
 		</div>
-		<div id="is_not_support" class="ui-widget-content">
 		<h4>Bonus Team Members</h4>
+		<div id="is_not_support" class="ui-widget-content ui-corner-all">
 		<ul> {% for person in not_support_team %}
 			<li>{{ person.first_name }} {{ person.last_name }}</li>
 			{% endfor %}

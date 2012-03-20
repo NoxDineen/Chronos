@@ -6,9 +6,6 @@
 
 <body>
 	<div id="sidebar">
-		{% block sidebar %}  {% endblock sidebar %} 
-	</div>
-
 	<div id="menu">
 		{% block menu %}
 
@@ -17,11 +14,15 @@
                 {% if user.is_staff %}
                 	<p>You're logged in, magic goes here soon.</p>
                 {% else %}
-                	<p>You're not logged in, no magix for you!</p>
+                	<p>You're not logged in, no magic for you!</p>
                 {% endif %}
 
             {% endblock menu %}
         </div>
+		{% block sidebar %}  {% endblock sidebar %} 
+	</div>
+
+	
 
 	<div id="main-content">
 		{% block content %} {% endblock content %}

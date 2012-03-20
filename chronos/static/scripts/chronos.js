@@ -6,8 +6,8 @@ $(document).ready(function(){
 		drop: function( event, ui ) {
 			$( this )
 				.addClass( "ui-state-highlight" )
-				.find( "td" )
-					.html( "Dropped!" );
+				.find( "p" )
+					.html( "Magic!" );
 		}
 	});
 
