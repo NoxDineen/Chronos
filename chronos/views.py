@@ -39,5 +39,5 @@ def month(request, year, month):
 		if len(lst[week]) == 7:
 			lst.append([])
 			week+=1
-
+			
 	return render(request, 'chronos/month.html', dict(year=year, month=month, day=day, month_days=lst, mname=month_names[month-1], support_team=support_team, not_support_team=not_support_team))

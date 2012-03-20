@@ -1,9 +1,16 @@
 #main-content {
+}
 
+#menu {
+	float: right;
+	width: 160px;
+}
+
+#month {
+	width: 85%;
 }
 
 #month table {
-	width: 75%;
 	float: left;
 	}
 	
@@ -22,10 +29,13 @@
 	float: right;
 }
 
-#is_support #is_not_support {
+#is_support, #is_not_support {
 	font-family: helvetica, tahoma, arial, sans-serif;
 	font-size: 90%;
-	float: left;
+}
+
+#is_support, #is_not_support ul li {
+	list-style: none;
 }
 
 #footer {

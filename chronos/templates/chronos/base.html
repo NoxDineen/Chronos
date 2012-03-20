@@ -6,20 +6,21 @@
 
 <body>
 	<div id="sidebar">
-	<div id="menu">
+		{% block sidebar %}  {% endblock sidebar %} 
+
+		<div id="menu">
 		{% block menu %}
 
                 <!-- MENU -->
                 <h3>Menu</h3>
                 {% if user.is_staff %}
-                	<p>You're logged in, magic goes here soon.</p>
+                	<p>You're logged in as {{ user.first_name }}. <a href="/admin/logout/">Click here to logout.</a></p>
                 {% else %}
-                	<p>You're not logged in, no magic for you!</p>
+                	<p>Managers, <a href="/admin/">log in</a> to access team lists and set schedules.</p>
                 {% endif %}
 
             {% endblock menu %}
         </div>
-		{% block sidebar %}  {% endblock sidebar %} 
 	</div>
 
 	

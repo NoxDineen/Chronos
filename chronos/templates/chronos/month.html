@@ -53,19 +53,24 @@
 	{% comment %}
 	Login form needs to go here. Drag/drop functionality needs to be limited to only those logged in with manager or higher authentication.
 	{% endcomment %}
-		<h3>Team Members</h3>
+	
+		{% if user.is_staff %} {% comment %}This is a shitty way to do this, since an unauthenticated user can still hit the AJAX endpoint I'll be adding and thus create an Assignment without authenticating.{% endcomment %}
+
 		<div id="is_support" class="ui-widget-content">
+		<h3>Team Members</h3>
 		<ul> {% for person in support_team %}
 			<li>{{ person.first_name }} {{ person.last_name }}</li>
 			{% endfor %}
 		</ul>
 		</div>
-		<h4>Bonus Team Members</h4>
+
 		<div id="is_not_support" class="ui-widget-content ui-corner-all">
+		<h4>Bonus Team Members</h4>
 		<ul> {% for person in not_support_team %}
 			<li>{{ person.first_name }} {{ person.last_name }}</li>
 			{% endfor %}
 		</ul>
+		{% endif %}
 		</div>
 
 	{% endblock sidebar %} 
