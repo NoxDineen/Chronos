@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"font",
+				"font	font-size: size"
+			],
+			[
 				"For",
 				"ForeignKey"
 			]
@@ -23,7 +27,7 @@
 			"file": "chronos/views.py",
 			"settings":
 			{
-				"buffer_size": 1361,
+				"buffer_size": 1466,
 				"line_ending": "Unix"
 			}
 		},
@@ -31,7 +35,7 @@
 			"file": "chronos/static/styles/chronos.css",
 			"settings":
 			{
-				"buffer_size": 226,
+				"buffer_size": 484,
 				"line_ending": "Unix"
 			}
 		},
@@ -61,18 +65,18 @@
 			}
 		},
 		{
-			"file": "chronos/templates/chronos/month.html",
+			"file": "chronos/static/scripts/chronos.js",
 			"settings":
 			{
-				"buffer_size": 2061,
+				"buffer_size": 288,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "chronos/static/scripts/chronos.js",
+			"file": "chronos/templates/chronos/month.html",
 			"settings":
 			{
-				"buffer_size": 81,
+				"buffer_size": 2379,
 				"line_ending": "Unix"
 			}
 		},
@@ -80,7 +84,7 @@
 			"file": "chronos/templates/chronos/base.html",
 			"settings":
 			{
-				"buffer_size": 1284,
+				"buffer_size": 1401,
 				"line_ending": "Unix"
 			}
 		}
@@ -166,7 +170,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 7,
 			"sheets":
 			[
 				{
@@ -187,7 +191,7 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"syntax": "Packages/Python/Python.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -202,15 +206,15 @@
 					"file": "chronos/views.py",
 					"settings":
 					{
-						"buffer_size": 1361,
+						"buffer_size": 1466,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1359,
-								1359
+								1275,
+								1275
 							]
 						],
 						"settings":
@@ -219,7 +223,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 17.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -229,23 +233,24 @@
 					"file": "chronos/static/styles/chronos.css",
 					"settings":
 					{
-						"buffer_size": 226,
+						"buffer_size": 484,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								157,
-								157
+								99,
+								99
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 17.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -332,18 +337,45 @@
 				},
 				{
 					"buffer": 6,
-					"file": "chronos/templates/chronos/month.html",
+					"file": "chronos/static/scripts/chronos.js",
 					"settings":
 					{
-						"buffer_size": 2061,
+						"buffer_size": 288,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1866,
-								1866
+								288,
+								288
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "chronos/templates/chronos/month.html",
+					"settings":
+					{
+						"buffer_size": 2379,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1483,
+								1483
 							]
 						],
 						"settings":
@@ -352,39 +384,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 467.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 7,
-					"file": "chronos/static/scripts/chronos.js",
-					"settings":
-					{
-						"buffer_size": 81,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								63,
-								63
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 482.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -394,15 +394,15 @@
 					"file": "chronos/templates/chronos/base.html",
 					"settings":
 					{
-						"buffer_size": 1284,
+						"buffer_size": 1401,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1148,
-								1148
+								564,
+								564
 							]
 						],
 						"settings":
@@ -410,7 +410,7 @@
 							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 17.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -435,18 +435,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
