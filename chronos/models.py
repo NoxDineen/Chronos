@@ -15,7 +15,7 @@ class Person(models.Model):
 class Assignment(models.Model):
 	date = models.DateField(auto_now=False)
 	person = models.ForeignKey('chronos.Person')
-	role = models.ForeignKey('chronos.Role')	
+	role = models.ForeignKey('chronos.Role', default='Support')	
 
 	class Meta:
 		unique_together = ('date', 'person')

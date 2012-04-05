@@ -28,6 +28,7 @@
 	            {% if day != 0 %}
 	                onMouseOver="this.bgColor='#eeeeee';"
 	                onMouseOut="this.bgColor='white';"
+	                data-id="{{ year }} {{ month }} {{ day }}"
 	            {% endif %} >
 
 	            {% if day != 0 %}
@@ -59,7 +60,7 @@
 		<div id="is_support" class="ui-widget-content">
 		<h3>Team Members</h3>
 		<ul> {% for person in support_team %}
-			<li>{{ person.first_name }} {{ person.last_name }}</li>
+			<li data-id="{{ person.id }}">{{ person.first_name }} {{ person.last_name }}</li>
 			{% endfor %}
 		</ul>
 		</div>
@@ -67,7 +68,7 @@
 		<div id="is_not_support" class="ui-widget-content ui-corner-all">
 		<h4>Bonus Team Members</h4>
 		<ul> {% for person in not_support_team %}
-			<li>{{ person.first_name }} {{ person.last_name }}</li>
+			<li data-id="{{ person.id }}">{{ person.first_name }} {{ person.last_name }}</li>
 			{% endfor %}
 		</ul>
 		{% endif %}
