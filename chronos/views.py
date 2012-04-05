@@ -5,6 +5,8 @@ import time
 from django.shortcuts import get_object_or_404, render_to_response, render
 from django.contrib.auth.forms import AuthenticationForm
 from django.core.urlresolvers import reverse
+from django.core.serializers import serialize
+from django.core.serializers.json import DjangoJSONEncoder
 
 month_names = "January February March April May June July August September October November December"
 month_names = month_names.split()
@@ -46,31 +48,16 @@ def month(request, year, month):
 			new_assignment = Assignment()
 			new_assignment.person = form.cleaned_data['person']
 			new_assignment.date = datetime.strptime('form.cleaned_data['date']', '%Y %m %d')
-# AJAX GOODNESS GOES HERE
+			if request.is_ajax:
+				data = simplejson.dump(
+					{'person': new_assignment.person,
+					'date': new_assignment.date,
+					cls=DjangoJSONEncoder}
+					)
+				return HttpResponse(data, mimetype='application/json')
+			else:
+				return HttpResponseRedirect('/%d/%d' % year, month)
 		else:
 			form = AssignmentForm()
-
-	# if request.method =='POST':
-	# 	form = CommentForm(request.POST)
-	# 	if form.is_valid():
-	# 		new_comment = Comment()
-	# 		new_comment.comment = form.cleaned_data['comment']
-	# 		new_comment.name = form.cleaned_data['name']
-	# 		new_comment.email = form.cleaned_data['email']
-	# 		new_comment.photo_id = myphoto.id
-	# 		new_comment.save()
-	# 		if request.is_ajax():
-	# 			data = simplejson.dump(
-	# 				{'comment': new_comment.comment,
-	# 				'created': new_comment.created,
-	# 				'email': new_comment.email,
-	# 				'name': new_comment.name }, 
-	# 				cls=DjangoJSONEncoder
-	# 				)
-	# 			return HttpResponse(data, mimetype='application/json')
-	# 		else:
-	# 			return HttpResponseRedirect('/photo/%d' % myphoto.id)
-	# else:
-	# 	form = CommentForm()
 			
 	return render(request, 'chronos/month.html', dict(year=year, month=month, day=day, month_days=lst, mname=month_names[month-1], support_team=support_team, not_support_team=not_support_team))

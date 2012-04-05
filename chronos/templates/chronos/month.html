@@ -33,10 +33,9 @@
 
 	            {% if day != 0 %}
 	                <p class="date">{{ day }}</p>
-	                <p class="assignments">{% for assignment in assignments %}
-	                    <br />
-	                    <b>{{ assignment.person }}</b>:<br /> {{ assignment.role }}
-	                {% endfor %}</p>
+	                <ul class="assignments">{% for assignment in assignments %}
+	                    <li data-id:"{{ assignment.id }}"><strong>{{ assignment.person }}</strong>:<br /> {{ assignment.role }}</li>
+	                {% endfor %}</ul>
 	            {% endif %}
 	            </td>
 	        {% endfor %}
