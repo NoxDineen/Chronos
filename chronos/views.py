@@ -45,9 +45,11 @@ def month(request, year, month):
 	if request.method == 'POST':
 		form = AssignmentForm(request.POST)
 		if form.is_valid:
+			# the date stuff ain't working, tidy it up once JS is done
+			date = datetime.strptime('form.cleaned_data['date']', '%Y %m %d')
 			new_assignment = Assignment()
 			new_assignment.person = form.cleaned_data['person']
-			new_assignment.date = datetime.strptime('form.cleaned_data['date']', '%Y %m %d')
+			new_assignment.date = date
 			if request.is_ajax:
 				data = simplejson.dump(
 					{'person': new_assignment.person,
