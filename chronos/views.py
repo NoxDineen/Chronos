@@ -1,4 +1,5 @@
 from chronos.models import *
+from chronos.forms import AssignmentForm
 from datetime import *
 import calendar
 import time
@@ -7,6 +8,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.core.urlresolvers import reverse
 from django.core.serializers import serialize
 from django.core.serializers.json import DjangoJSONEncoder
+from django.http import HttpResponseRedirect
 
 month_names = "January February March April May June July August September October November December"
 month_names = month_names.split()
@@ -44,22 +46,21 @@ def month(request, year, month):
 
 	if request.method == 'POST':
 		form = AssignmentForm(request.POST)
-		if form.is_valid:
-			# the date stuff ain't working, tidy it up once JS is done
-			date = datetime.strptime('form.cleaned_data['date']', '%Y %m %d')
-			new_assignment = Assignment()
-			new_assignment.person = form.cleaned_data['person']
-			new_assignment.date = date
-			if request.is_ajax:
-				data = simplejson.dump(
-					{'person': new_assignment.person,
-					'date': new_assignment.date,
-					cls=DjangoJSONEncoder}
-					)
-				return HttpResponse(data, mimetype='application/json')
-			else:
-				return HttpResponseRedirect('/%d/%d' % year, month)
-		else:
-			form = AssignmentForm()
+		if form.is_valid():
+			# new_assignment = Assignment()
+			# new_assignment.person = form.cleaned_data['person']
+			# new_assignment.date = form.cleaned_data['date']
+			# if request.is_ajax:
+			# 	data = simplejson.dump(
+			# 		{'person': new_assignment.person,
+			# 		'date': new_assignment.date},
+			# 		cls=DjangoJSONEncoder
+			# 		)
+			# 	return HttpResponse(data, mimetype='application/json')
+			# else:
+			form.save()
+			return HttpResponseRedirect('/%d/%d' % (year, month))
+	else:
+		form = AssignmentForm()
 			
-	return render(request, 'chronos/month.html', dict(year=year, month=month, day=day, month_days=lst, mname=month_names[month-1], support_team=support_team, not_support_team=not_support_team))
+	return render(request, 'chronos/month.html', dict(year=year, month=month, day=day, month_days=lst, mname=month_names[month-1], support_team=support_team, not_support_team=not_support_team, form=form))

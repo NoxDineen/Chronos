@@ -28,7 +28,7 @@
 	            {% if day != 0 %}
 	                onMouseOver="this.bgColor='#eeeeee';"
 	                onMouseOut="this.bgColor='white';"
-	                data-id="{{ year }} {{ month }} {{ day }}"
+	                data-id="{{ year }}-{{ month }}-{{ day }}"
 	            {% endif %} >
 
 	            {% if day != 0 %}
@@ -46,6 +46,10 @@
 	    <div class="clear"></div>
 	</div>
 
+		<form id="assignment-form" action="" method="post">
+			{% csrf_token %} {{ form }}
+		</form>
+
 {% endblock content %}
 
 	{% block sidebar %} 
@@ -56,7 +60,7 @@
 	
 		{% if user.is_staff %} {% comment %}This is a shitty way to do this, since an unauthenticated user can still hit the AJAX endpoint I'll be adding and thus create an Assignment without authenticating.{% endcomment %}
 
-		<div id="is_support" class="ui-widget-content">
+		<div id="is_support" class="ui-widget-content ui-corner-all">
 		<h3>Team Members</h3>
 		<ul> {% for person in support_team %}
 			<li data-id="{{ person.id }}">{{ person.first_name }} {{ person.last_name }}</li>
