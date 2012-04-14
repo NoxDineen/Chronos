@@ -60,21 +60,23 @@
 	
 		{% if user.is_staff %} {% comment %}This is a shitty way to do this, since an unauthenticated user can still hit the AJAX endpoint I'll be adding and thus create an Assignment without authenticating.{% endcomment %}
 
-		<div id="is_support" class="ui-widget-content ui-corner-all">
-		<h3>Team Members</h3>
+	<div id="accordion">
+		<h3 id="is_support"><a href="#">Rockstars</a></h3>
+		<div>
 		<ul> {% for person in support_team %}
 			<li data-id="{{ person.id }}">{{ person.first_name }} {{ person.last_name }}</li>
 			{% endfor %}
 		</ul>
 		</div>
 
-		<div id="is_not_support" class="ui-widget-content ui-corner-all">
-		<h4>Bonus Team Members</h4>
+		<h3 id="is_not_support"><a href="#">Gueststars</a></h3>
+		<div>
 		<ul> {% for person in not_support_team %}
 			<li data-id="{{ person.id }}">{{ person.first_name }} {{ person.last_name }}</li>
 			{% endfor %}
 		</ul>
-		{% endif %}
 		</div>
+		{% endif %}
+	</div>
 
 	{% endblock sidebar %} 

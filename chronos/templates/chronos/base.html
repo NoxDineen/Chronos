@@ -1,18 +1,20 @@
 <html>
 <head>
 <title>{% block title %} Chronos - GJST! {% endblock title %}</title></head>
-<link rel="stylesheet" href="/static/styles/chronos.css" />
+<link type="text/css" href="/static/styles/chronos.css" rel="stylesheet" />
 <link type="text/css" href="{{ STATIC_URL }}scripts/css/start/jquery-ui-1.8.18.custom.css" rel="Stylesheet" />	
 
 <body>
+	<div id="main-content">
+		{% block content %} {% endblock content %}
+	</div>
+
 	<div id="sidebar">
 		{% block sidebar %}  {% endblock sidebar %} 
 
 		<div id="menu">
 		{% block menu %}
-
-                <!-- MENU -->
-                <h3>Menu</h3>
+            <h3>Menu</h3>
                 {% if user.is_staff %}
                 	<p>You're logged in as {{ user.first_name }}. <a href="/admin/logout/">Click here to logout.</a></p>
                 {% else %}
@@ -21,12 +23,6 @@
 
             {% endblock menu %}
         </div>
-	</div>
-
-	
-
-	<div id="main-content">
-		{% block content %} {% endblock content %}
 	</div>
 
 	<div id="footer">

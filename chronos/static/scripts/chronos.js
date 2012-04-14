@@ -2,6 +2,8 @@ $(document).ready(function(){
 	$("#sidebar li").draggable({
 		revert: true,
 		cursor: 'move',
+		appendTo: 'body',
+        helper: 'clone'
 	});
 
 	$("#main-content #month td").droppable({
@@ -19,5 +21,7 @@ $(document).ready(function(){
 			$('#assignment-form').submit();
 		}
 	});
+
+	$( "#accordion" ).accordion();
 
 });
