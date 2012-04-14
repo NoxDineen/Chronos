@@ -42,3 +42,7 @@
 	border-width: 1px;
 	clear: both;
 }
+
+#assignment-form {
+	display: none;
+}

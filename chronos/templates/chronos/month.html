@@ -2,7 +2,7 @@
 
 {% block content %} 
 
-	<h4>{{ mname }} {{ year }}</h4>
+	<h4><a href="/{{ prev_year }}/{{ prev_month }}">Prev</a> || {{ mname }} {{ year }} || <a href="/{{ next_year }}/{{ next_month }}">Next</a></h4>
 
 	<div id="month">
 	    <table width="95%">

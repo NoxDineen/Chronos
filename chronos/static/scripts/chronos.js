@@ -1,5 +1,8 @@
 $(document).ready(function(){
-	$("#sidebar li").draggable({revert: true});
+	$("#sidebar li").draggable({
+		revert: true,
+		cursor: 'move',
+	});
 
 	$("#main-content #month td").droppable({
 		hoverClass: "ui-state-active",
