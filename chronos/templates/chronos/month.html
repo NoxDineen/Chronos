@@ -34,7 +34,13 @@
 	            {% if day != 0 %}
 	                <p class="date">{{ day }}</p>
 	                <ul class="assignments">{% for assignment in assignments %}
-	                    <li data-id:"{{ assignment.id }}"><strong>{{ assignment.person }}</strong>:<br /> {{ assignment.role }}</li>
+	                    
+	                    <li data-id:"{{ assignment.id }}"><strong>{{ assignment.person }}</strong>:<br /> {{ assignment.role }}
+	                    	<form method="POST" action="/delete-assignment/{{ assignment.id }}/">{% csrf_token %}
+	                    		<input type="submit" value="X">
+	                    	</form>
+	                    </li>
+
 	                {% endfor %}</ul>
 	            {% endif %}
 	            </td>

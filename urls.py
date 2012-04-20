@@ -13,5 +13,6 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),,
     url(r'^$', 'timekeeper.chronos.views.month'),
     url(r'^(\d{4})/(\d{1,2})/$', 'timekeeper.chronos.views.month'),
+    url(r'^delete-assignment/(\d+)/$', 'timekeeper.chronos.views.delete_assignment'),
 	url(r'^admin/', include(admin.site.urls))
 )

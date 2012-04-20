@@ -53,21 +53,11 @@ def month(request, year=None, month=None):
 	current = datetime.datetime(year, month, 1)
 	next_month = current + datetime.timedelta(days=31)
 	prev_month = current - datetime.timedelta(days=1)
-
-	# if month > 1 and month < 12:
-	# 	next_month = month + 1
-	# 	next_year = year
-	# 	prev_month = month - 1
-	# 	prev_year = year
-	# elif month == 1:
-	# 	next_month = month + 1
-	# 	next_year = year
-	# 	prev_month = 12
-	# 	prev_year = year - 1
-	# else: # month == 12
-	# 	next_month = 1 
-	# 	next_year = year + 1
-	# 	prev_month = month - 1 
-	# 	prev_year = year
 			
 	return render(request, 'chronos/month.html', dict(year=year, month=month, day=day, month_days=lst, mname=month_names[month-1], support_team=support_team, not_support_team=not_support_team, form=form, prev_month=prev_month, next_month=next_month))
+
+
+def delete_assignment(request, assignment_id):
+	assignment = Assignment.objects.get(id=assignment_id)
+	assignment.delete()
+	return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
