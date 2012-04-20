@@ -1,6 +1,6 @@
 from chronos.models import *
 from chronos.forms import AssignmentForm
-from datetime import *
+import datetime
 import calendar
 import time
 from django.shortcuts import get_object_or_404, render_to_response, render
@@ -15,7 +15,7 @@ month_names = month_names.split()
 
 def month(request, year=None, month=None):
 	if year is None or month is None:
-		now = datetime.now()
+		now = datetime.datetime.now()
 		year = now.year
 		month = now.month
 	else:
@@ -50,22 +50,24 @@ def month(request, year=None, month=None):
 	else:
 		form = AssignmentForm()
 
+	current = datetime.datetime(year, month, 1)
+	next_month = current + datetime.timedelta(days=31)
+	prev_month = current - datetime.timedelta(days=1)
 
-
-	if month > 1 and month < 12:
-		next_month = month + 1
-		next_year = year
-		prev_month = month - 1
-		prev_year = year
-	elif month == 1:
-		next_month = month + 1
-		next_year = year
-		prev_month = 12
-		prev_year = year - 1
-	else: # month == 12
-		next_month = 1 
-		next_year = year + 1
-		prev_month = month - 1 
-		prev_year = year
+	# if month > 1 and month < 12:
+	# 	next_month = month + 1
+	# 	next_year = year
+	# 	prev_month = month - 1
+	# 	prev_year = year
+	# elif month == 1:
+	# 	next_month = month + 1
+	# 	next_year = year
+	# 	prev_month = 12
+	# 	prev_year = year - 1
+	# else: # month == 12
+	# 	next_month = 1 
+	# 	next_year = year + 1
+	# 	prev_month = month - 1 
+	# 	prev_year = year
 			
-	return render(request, 'chronos/month.html', dict(year=year, month=month, day=day, month_days=lst, mname=month_names[month-1], support_team=support_team, not_support_team=not_support_team, form=form, prev_month=prev_month, prev_year=prev_year, next_month=next_month, next_year=next_year))
+	return render(request, 'chronos/month.html', dict(year=year, month=month, day=day, month_days=lst, mname=month_names[month-1], support_team=support_team, not_support_team=not_support_team, form=form, prev_month=prev_month, next_month=next_month))
