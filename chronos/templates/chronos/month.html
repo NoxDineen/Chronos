@@ -4,7 +4,7 @@
 
 	<h4><a href="/{{ prev_year }}/{{ prev_month }}">Prev</a> || {{ mname }} {{ year }} || <a href="/{{ next_year }}/{{ next_month }}">Next</a></h4>
 
-	<div id="month">
+	<div id="month" width="75%">
 	    <table width="95%">
 
 	    <tr valign="top">
@@ -60,7 +60,7 @@
 	
 		{% if user.is_staff %} {% comment %}This is a shitty way to do this, since an unauthenticated user can still hit the AJAX endpoint I'll be adding and thus create an Assignment without authenticating.{% endcomment %}
 
-	<div id="accordion">
+	<div id="accordion" width="25%">
 		<h3 id="is_support"><a href="#">Rockstars</a></h3>
 		<div>
 		<ul> {% for person in support_team %}

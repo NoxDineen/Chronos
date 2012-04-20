@@ -22,6 +22,21 @@ $(document).ready(function(){
 		}
 	});
 
+	$('#delete-form').submit(
+		function( event ) {
+			assignment = $(this).attr('assignment-id');
+			$.post(
+				'/delete-assignment/',
+				form.serializeArray(),
+				function(data) {
+					console.log(data);
+				},
+				'json'
+			);
+		e.preventDefault();
+	}
+	);
+
 	$( "#accordion" ).accordion();
 
 });
