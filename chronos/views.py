@@ -31,13 +31,13 @@ def month(request, year=None, month=None):
 	week = 0
 
 	for day in month_days:
-		assignments = current = False #are there assignments for this day? current day?
+		assignments = today = False #are there assignments for this day? today?
 		if day:
 			assignments = Assignment.objects.filter(date__year=year, date__month=month, date__day=day)
 			if year == nyear and month == nmonth and day == nday:
-				current = True
+				today = True
 
-		lst[week].append((day, assignments, current))
+		lst[week].append((day, assignments, today))
 		if len(lst[week]) == 7:
 			lst.append([])
 			week+=1
