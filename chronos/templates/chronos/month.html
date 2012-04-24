@@ -35,8 +35,8 @@
 	                <p class="date">{{ day }}</p>
 	                <ul class="assignments">{% for assignment in assignments %}
 	                    
-	                    <li data-id:"{{ assignment.id }}"><strong>{{ assignment.person }}</strong>:<br /> {{ assignment.role }}
-	                    	<form method="POST" action="/delete-assignment/{{ assignment.id }}/">{% csrf_token %}
+	                    <li data-id="{{ assignment.id }}"><strong>{{ assignment.person }}</strong>:<br /> {{ assignment.role }}
+	                    	<form class="delete-assignment" method="POST" action="/delete-assignment/{{ assignment.id }}/">{% csrf_token %}
 	                    		<input type="submit" value="X">
 	                    	</form>
 	                    </li>

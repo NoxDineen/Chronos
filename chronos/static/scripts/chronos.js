@@ -22,18 +22,21 @@ $(document).ready(function(){
 		}
 	});
 
-	$('#delete-form').submit(
+
+// Assignment deletion AJAXification
+	$('.delete-assignment').submit(
 		function( event ) {
-			assignment = $(this).attr('assignment-id');
+			var assignment = $(this).parent().data('id');
 			$.post(
-				'/delete-assignment/',
-				form.serializeArray(),
-				function(data) {
+				'/delete-assignment/' + assignment + '/',
+				$(this).serializeArray(),
+				function( data ) {
 					console.log(data);
+					$(this).parent.remove();
 				},
 				'json'
 			);
-		e.preventDefault();
+		event.preventDefault();
 	}
 	);
 

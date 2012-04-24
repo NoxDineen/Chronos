@@ -46,7 +46,17 @@ def month(request, year=None, month=None):
 		form = AssignmentForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return HttpResponseRedirect('/%d/%d' % (year, month))
+
+			if request.is_ajax():
+				data = simplejson.dump(
+					{'date': new_assignment.date,
+					'person': new_assignment.person,
+					'role': new_assignment.role}, 
+					cls=DjangoJSONEncoder
+					)
+				return HttpResponse(data, mimetype='application/json')
+			else:
+				return HttpResponseRedirect('/%d/%d' % (year, month))
 	else:
 		form = AssignmentForm()
 
