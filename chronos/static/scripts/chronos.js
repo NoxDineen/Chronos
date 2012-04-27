@@ -32,10 +32,10 @@ $(document).ready(function(){
 				$(this).serializeArray(),
 				function( data ) {
 					console.log(data);
-					$(this).parent.remove();
 				},
 				'json'
 			);
+		$(this).parent().remove();
 		event.preventDefault();
 	}
 	);

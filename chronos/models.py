@@ -26,6 +26,7 @@ class Assignment(models.Model):
 class Role(models.Model):
 	name = models.CharField(max_length=255)
 	icon = models.FileField(upload_to='chronos', blank=True)
+	icon_mini = models.FileField(upload_to='chronos', blank=True)
 
 	def __unicode__(self):
 		return self.name
