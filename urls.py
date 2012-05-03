@@ -16,3 +16,8 @@ urlpatterns = patterns('',
     url(r'^delete-assignment/(\d+)/$', 'timekeeper.chronos.views.delete_assignment'),
 	url(r'^admin/', include(admin.site.urls))
 )
+
+from django.conf.urls.static import static
+from django.conf import settings
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

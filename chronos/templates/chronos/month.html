@@ -63,6 +63,13 @@
 	{% comment %}
 	Login form needs to go here. Drag/drop functionality needs to be limited to only those logged in with manager or higher authentication.
 	{% endcomment %}
+
+	<h3 id="roles"><a href="#"class="ui-state-default ui-corner-all">Roles</a></h3>
+	<ul id ="role_icons">
+		{% for role in roles %}
+		<li><img src="{{ role.icon.url }}" /> {{ role.name }}</li>
+		{% endfor %}
+	</ul>
 	
 		{% if user.is_staff %} {% comment %}This is a shitty way to do this, since an unauthenticated user can still hit the AJAX endpoint I'll be adding and thus create an Assignment without authenticating.{% endcomment %}
 

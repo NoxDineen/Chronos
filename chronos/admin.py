@@ -12,7 +12,11 @@ class AssignmentAdmin(admin.ModelAdmin):
 	date_hierarchy = 'date'
 
 class RoleAdmin(admin.ModelAdmin):
-	list_display = ('name', 'icon')
+	list_display = ('name', 'picture', 'icon')
+
+	def picture(self, icon):
+		return '<img src="%s" height="48"/>' % icon.filename.url
+	picture.allow_tags = True
 
 
 admin.site.register(Person, PersonAdmin)

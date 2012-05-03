@@ -23,6 +23,7 @@ def month(request, year=None, month=None):
 
 	support_team = Person.objects.filter(is_support=True)
 	not_support_team = Person.objects.filter(is_support=False)
+	roles = Role.objects.all()
 
 	cal = calendar.Calendar() 
 	month_days = cal.itermonthdays(year, month)
@@ -64,7 +65,7 @@ def month(request, year=None, month=None):
 	next_month = current + datetime.timedelta(days=31)
 	prev_month = current - datetime.timedelta(days=1)
 			
-	return render(request, 'chronos/month.html', dict(year=year, month=month, day=day, month_days=lst, mname=month_names[month-1], support_team=support_team, not_support_team=not_support_team, form=form, prev_month=prev_month, next_month=next_month))
+	return render(request, 'chronos/month.html', dict(year=year, month=month, day=day, month_days=lst, mname=month_names[month-1], roles=roles, support_team=support_team, not_support_team=not_support_team, form=form, prev_month=prev_month, next_month=next_month))
 
 
 def delete_assignment(request, assignment_id):

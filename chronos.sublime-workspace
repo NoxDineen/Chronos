@@ -31,7 +31,7 @@
 			"file": "urls.py",
 			"settings":
 			{
-				"buffer_size": 719,
+				"buffer_size": 874,
 				"line_ending": "Unix"
 			}
 		},
@@ -39,7 +39,7 @@
 			"file": "chronos/admin.py",
 			"settings":
 			{
-				"buffer_size": 574,
+				"buffer_size": 698,
 				"line_ending": "Unix",
 				"name": "from django.contrib import Admin"
 			}
@@ -48,7 +48,7 @@
 			"file": "chronos/views.py",
 			"settings":
 			{
-				"buffer_size": 2463,
+				"buffer_size": 2504,
 				"line_ending": "Unix"
 			}
 		},
@@ -61,18 +61,18 @@
 			}
 		},
 		{
-			"file": "chronos/templates/chronos/month.html",
+			"file": "chronos/static/scripts/chronos.js",
 			"settings":
 			{
-				"buffer_size": 3018,
+				"buffer_size": 1629,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "chronos/static/scripts/chronos.js",
+			"file": "/Users/nox/Code/API_Fix/Amanda - Tax on expenses/fix.py",
 			"settings":
 			{
-				"buffer_size": 1028,
+				"buffer_size": 3627,
 				"line_ending": "Unix"
 			}
 		},
@@ -80,7 +80,15 @@
 			"file": "chronos/models.py",
 			"settings":
 			{
-				"buffer_size": 899,
+				"buffer_size": 938,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chronos/templates/chronos/month.html",
+			"settings":
+			{
+				"buffer_size": 3232,
 				"line_ending": "Unix"
 			}
 		},
@@ -129,6 +137,7 @@
 	},
 	"file_history":
 	[
+		"/Users/nox/Code/timekeeper/chronos/models.py",
 		"/Users/nox/Code/timekeeper/chronos/static/scripts/css/black-tie/jquery-ui-1.8.18.custom.css",
 		"/Users/nox/Code/timekeeper/chronos/static/scripts/js/xcrf-request.js",
 		"/Users/nox/Code/timekeeper/chronos/forms.py",
@@ -206,8 +215,8 @@
 						"selection":
 						[
 							[
-								2457,
-								2457
+								2281,
+								2281
 							]
 						],
 						"settings":
@@ -276,15 +285,15 @@
 					"file": "urls.py",
 					"settings":
 					{
-						"buffer_size": 719,
+						"buffer_size": 874,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								719,
-								719
+								796,
+								796
 							]
 						],
 						"settings":
@@ -351,15 +360,15 @@
 					"file": "chronos/admin.py",
 					"settings":
 					{
-						"buffer_size": 574,
+						"buffer_size": 698,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								351,
-								351
+								504,
+								504
 							]
 						],
 						"settings":
@@ -414,7 +423,8 @@
 								"Python Django": "python"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -427,15 +437,15 @@
 					"file": "chronos/views.py",
 					"settings":
 					{
-						"buffer_size": 2463,
+						"buffer_size": 2504,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1600,
-								1600
+								913,
+								913
 							]
 						],
 						"settings":
@@ -493,7 +503,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 514.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -575,94 +585,18 @@
 				},
 				{
 					"buffer": 5,
-					"file": "chronos/templates/chronos/month.html",
-					"settings":
-					{
-						"buffer_size": 3018,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1427,
-								1427
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 0.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": false,
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"Python Django": "python"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 352.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
 					"file": "chronos/static/scripts/chronos.js",
 					"settings":
 					{
-						"buffer_size": 1028,
+						"buffer_size": 1629,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								583,
-								583
+								912,
+								917
 							]
 						],
 						"settings":
@@ -720,7 +654,35 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 336.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/nox/Code/API_Fix/Amanda - Tax on expenses/fix.py",
+					"settings":
+					{
+						"buffer_size": 3627,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								878,
+								878
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 273.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -730,15 +692,48 @@
 					"file": "chronos/models.py",
 					"settings":
 					{
-						"buffer_size": 899,
+						"buffer_size": 938,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								425,
-								425
+								893,
+								893
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 8,
+					"file": "chronos/templates/chronos/month.html",
+					"settings":
+					{
+						"buffer_size": 3232,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2881,
+								2881
 							]
 						],
 						"settings":
@@ -792,17 +787,17 @@
 								"Python Django": "python"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 819.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "chronos/templates/chronos/base.html",
 					"settings":
 					{
@@ -813,8 +808,8 @@
 						"selection":
 						[
 							[
-								406,
-								406
+								867,
+								867
 							]
 						],
 						"settings":
@@ -870,14 +865,14 @@
 							"sublimelinter_wrap_find": true,
 							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
 						},
-						"translation.x": 0.0,
+						"translation.x": 1.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "chronos/static/styles/chronos.css",
 					"settings":
 					{
@@ -972,11 +967,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":

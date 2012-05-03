@@ -40,6 +40,29 @@ $(document).ready(function(){
 	}
 	);
 
-	$( "#accordion" ).accordion();
+	$( "#accordion" ).accordion({ active: 2 });
+
+	function runToggle() {
+			// get effect type from 
+			var selectedEffect = blind;
+			
+			// most effect types need no options passed by default
+			var options = {};
+			// some effects have required parameters
+			if ( selectedEffect === "scale" ) {
+				options = { percent: 0 };
+			} else if ( selectedEffect === "size" ) {
+				options = { to: { width: 200, height: 60 } };
+			}
+			
+			// run the effect
+			$( "#role_icons" ).toggle( selectedEffect, options, 500 );
+		};
+		
+		// set effect from select menu value
+		$( "#roles" ).click(function() {
+			runEffect();
+			return false;
+		});
 
 });
