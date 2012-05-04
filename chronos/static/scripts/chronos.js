@@ -15,8 +15,8 @@ $(document).ready(function(){
 				.addClass( "ui-state-highlight" )
 				.find( ".assignments" )
 					.append(event.srcElement);
-			date = $(this).attr('data-id');
-			person = $(event.srcElement).attr('data-id');
+			var date = $(this).attr('data-id');
+			var person = $(event.srcElement).attr('data-id');
 			$('#id_date').attr('value', date);
 			$('#id_person').attr('value', person);
 			$('#assignment-form').submit();
@@ -24,17 +24,21 @@ $(document).ready(function(){
 	});
 
 	$(".assignment").droppable({
-		hoverClass: "ui-state-active",
 		accept: ".role",
+		hoverClass: "ui-state-active",
 		drop: function( event, ui ) {
-			// AJAX assignment creation and display should go here
+			// AJAX role assignment and display update should go here
 			$( this )
 				.append(event.srcElement);
-			role = $(this).attr('data-id');
-			/* $('#id_date').attr('value', date);
-			$('#id_person').attr('value', person);
-			$('#assignment-form').submit(); */
-		}
+			var assignment = $(this).attr('data-id');
+			var role = ui.draggable.data('id');
+
+			$.post(
+				'/assign-role/' + assignment + '/' + role + '/',
+				{
+
+				})
+			}
 	});
 
 

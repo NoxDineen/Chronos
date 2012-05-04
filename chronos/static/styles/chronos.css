@@ -46,6 +46,10 @@
 	clear: both;
 }
 
+#assign-role {
+	display: none;
+}
+
 #assignment-form {
 	display: none;
 }

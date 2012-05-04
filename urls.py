@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^$', 'timekeeper.chronos.views.month'),
     url(r'^(\d{4})/(\d{1,2})/$', 'timekeeper.chronos.views.month'),
     url(r'^delete-assignment/(\d+)/$', 'timekeeper.chronos.views.delete_assignment'),
+    url(r'^assign-role/(\d+)/(\d+)/$', 'timekeeper.chronos.views.assign_role'),
 	url(r'^admin/', include(admin.site.urls))
 )
 

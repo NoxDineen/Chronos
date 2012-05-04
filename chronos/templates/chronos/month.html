@@ -35,10 +35,10 @@
 	                <p class="date">{{ day }}</p>
 	                <ul class="assignments">{% for assignment in assignments %}
 	                    
-	                    <li class = "assignment" data-id="{{ assignment.id }}"><strong>{{ assignment.person }}</strong>: <img src="{{ assignment.role }}" />
+	                    <li class = "assignment" data-id="{{ assignment.id }}">
 	                    	<form class="delete-assignment" method="POST" action="/delete-assignment/{{ assignment.id }}/">{% csrf_token %}
 	                    		<input type="submit" value="X">
-	                    	</form>
+	                    	<strong>{{ assignment.person }}</strong>: <img src="{{ assignment.role.icon_mini.url }}" /></form>
 	                    </li>
 
 	                {% endfor %}</ul>
@@ -53,6 +53,10 @@
 	</div>
 
 		<form id="assignment-form" action="" method="post">
+			{% csrf_token %} {{ form }}
+		</form>
+
+		<form id="assign-role" action="" method="post">
 			{% csrf_token %} {{ form }}
 		</form>
 

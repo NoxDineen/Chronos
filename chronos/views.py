@@ -44,6 +44,7 @@ def month(request, year=None, month=None):
 			week+=1
 
 	if request.method == 'POST':
+		import pdb; pdb.set_trace()
 		form = AssignmentForm(request.POST)
 		if form.is_valid():
 			form.save()
@@ -71,4 +72,9 @@ def month(request, year=None, month=None):
 def delete_assignment(request, assignment_id):
 	assignment = Assignment.objects.get(id=assignment_id)
 	assignment.delete()
+	return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+def assign_role(request, assignment_id, role_id):
+	assignment = Assignment.objects.get(id=assignment_id)
+	assignment.role = role_id
 	return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
