@@ -7,6 +7,7 @@ $(document).ready(function(){
 	});
 
 	$("#main-content #month td").droppable({
+		accept: ".support, .not_support",
 		hoverClass: "ui-state-active",
 		drop: function( event, ui ) {
 			// AJAX assignment creation and display should go here
@@ -24,6 +25,7 @@ $(document).ready(function(){
 
 	$(".assignment").droppable({
 		hoverClass: "ui-state-active",
+		accept: ".role",
 		drop: function( event, ui ) {
 			// AJAX assignment creation and display should go here
 			$( this )

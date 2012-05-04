@@ -1,4 +1,5 @@
 #main-content {
+	font-family: helvetica, tahoma, sans-serif;
 }
 
 #menu {
@@ -35,17 +36,6 @@
 }
 
 #accordion ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
-
-#is_support, #is_not_support {
-	font-family: helvetica, tahoma, arial, sans-serif;
-	font-size: 90%;
-}
-
-#is_support, #is_not_support ul li {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
