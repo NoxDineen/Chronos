@@ -22,6 +22,19 @@ $(document).ready(function(){
 		}
 	});
 
+	$(".assignment").droppable({
+		hoverClass: "ui-state-active",
+		drop: function( event, ui ) {
+			// AJAX assignment creation and display should go here
+			$( this )
+				.append(event.srcElement);
+			role = $(this).attr('data-id');
+			/* $('#id_date').attr('value', date);
+			$('#id_person').attr('value', person);
+			$('#assignment-form').submit(); */
+		}
+	});
+
 
 // Assignment deletion AJAXification
 	$('.delete-assignment').submit(
@@ -40,29 +53,6 @@ $(document).ready(function(){
 	}
 	);
 
-	$( "#accordion" ).accordion({ active: 2 });
-
-	function runToggle() {
-			// get effect type from 
-			var selectedEffect = blind;
-			
-			// most effect types need no options passed by default
-			var options = {};
-			// some effects have required parameters
-			if ( selectedEffect === "scale" ) {
-				options = { percent: 0 };
-			} else if ( selectedEffect === "size" ) {
-				options = { to: { width: 200, height: 60 } };
-			}
-			
-			// run the effect
-			$( "#role_icons" ).toggle( selectedEffect, options, 500 );
-		};
-		
-		// set effect from select menu value
-		$( "#roles" ).click(function() {
-			runEffect();
-			return false;
-		});
+	$( "#accordion" ).accordion({ active: 1 });
 
 });

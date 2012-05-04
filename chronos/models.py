@@ -29,4 +29,5 @@ class Role(models.Model):
 	icon_mini = models.FileField(upload_to='chronos')
 
 	def __unicode__(self):
-		return self.name
+		return self.icon_mini.url
+		#return self.name

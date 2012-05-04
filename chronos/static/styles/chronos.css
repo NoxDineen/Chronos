@@ -21,6 +21,11 @@
 	border-color: #000;
 }
 
+#month ul {
+	list-style-type: none;
+	padding: 0;
+}
+
 .assignments {
 	font-size: 0.8em;
 }
@@ -29,13 +34,21 @@
 	float: right;
 }
 
+#accordion ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
 #is_support, #is_not_support {
 	font-family: helvetica, tahoma, arial, sans-serif;
 	font-size: 90%;
 }
 
 #is_support, #is_not_support ul li {
-	list-style: none;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
 }
 
 #footer {

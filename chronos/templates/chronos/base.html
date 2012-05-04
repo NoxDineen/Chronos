@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>{% block title %} Chronos - GJST! {% endblock title %}</title></head>
-<link type="text/css" href="/static/styles/chronos.css" rel="stylesheet" />
+<link type="text/css" href="{{ STATIC_URL }}styles/chronos.css" rel="stylesheet" />
 <link type="text/css" href="{{ STATIC_URL }}scripts/css/start/jquery-ui-1.8.18.custom.css" rel="Stylesheet" />	
 
 <body>
@@ -23,6 +23,7 @@
 
             {% endblock menu %}
         </div>
+
 	</div>
 
 	<div id="footer">

@@ -35,7 +35,7 @@
 	                <p class="date">{{ day }}</p>
 	                <ul class="assignments">{% for assignment in assignments %}
 	                    
-	                    <li data-id="{{ assignment.id }}"><strong>{{ assignment.person }}</strong>:<br /> {{ assignment.role }}
+	                    <li class = "assignment" data-id="{{ assignment.id }}"><strong>{{ assignment.person }}</strong>: <img src="{{ assignment.role }}" />
 	                    	<form class="delete-assignment" method="POST" action="/delete-assignment/{{ assignment.id }}/">{% csrf_token %}
 	                    		<input type="submit" value="X">
 	                    	</form>
@@ -64,16 +64,19 @@
 	Login form needs to go here. Drag/drop functionality needs to be limited to only those logged in with manager or higher authentication.
 	{% endcomment %}
 
-	<h3 id="roles"><a href="#"class="ui-state-default ui-corner-all">Roles</a></h3>
-	<ul id ="role_icons">
-		{% for role in roles %}
-		<li><img src="{{ role.icon.url }}" /> {{ role.name }}</li>
-		{% endfor %}
-	</ul>
+	
 	
 		{% if user.is_staff %} {% comment %}This is a shitty way to do this, since an unauthenticated user can still hit the AJAX endpoint I'll be adding and thus create an Assignment without authenticating.{% endcomment %}
 
 	<div id="accordion" width="25%">
+
+		<h3 id="roles"><a href="#">Roles</a></h3>
+		<ul id ="role_icons">
+		{% for role in roles %}
+		<li data-id="{{ role.id }}"><img src="{{ role.icon.url }}" /> {{ role.name }}</li>
+		{% endfor %}
+		</ul>
+
 		<h3 id="is_support"><a href="#">Rockstars</a></h3>
 		<div>
 		<ul> {% for person in support_team %}

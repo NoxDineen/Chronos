@@ -23,7 +23,7 @@
 			"file": "settings.py",
 			"settings":
 			{
-				"buffer_size": 5245,
+				"buffer_size": 5237,
 				"line_ending": "Unix"
 			}
 		},
@@ -72,7 +72,7 @@
 			"file": "/Users/nox/Code/API_Fix/Amanda - Tax on expenses/fix.py",
 			"settings":
 			{
-				"buffer_size": 3627,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
@@ -200,7 +200,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -208,15 +208,15 @@
 					"file": "settings.py",
 					"settings":
 					{
-						"buffer_size": 5245,
+						"buffer_size": 5237,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2281,
-								2281
+								2154,
+								2154
 							]
 						],
 						"settings":
@@ -664,15 +664,15 @@
 					"file": "/Users/nox/Code/API_Fix/Amanda - Tax on expenses/fix.py",
 					"settings":
 					{
-						"buffer_size": 3627,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								878,
-								878
+								0,
+								0
 							]
 						],
 						"settings":
