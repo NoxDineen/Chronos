@@ -78,7 +78,7 @@
 		<div>
 			<ul id ="role_icons">
 				{% for role in roles %}
-				<li class="role" data-id="{{ role.id }}"><img src="{{ role.icon.url }}" /> {{ role.name }}</li>
+				<li class="role" data-id="{{ role.id }}" data-miniicon="{{ role.icon_mini.url }}"><img src="{{ role.icon.url }}" /> {{ role.name }}</li>
 				{% endfor %}
 			</ul>
 		</div>

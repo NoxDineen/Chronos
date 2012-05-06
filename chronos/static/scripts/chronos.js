@@ -20,26 +20,31 @@ $(document).ready(function(){
 			$('#id_date').attr('value', date);
 			$('#id_person').attr('value', person);
 			$('#assignment-form').submit();
+			event.preventDefault();
 		}
-	});
+	}
+	);
 
 	$(".assignment").droppable({
 		accept: ".role",
 		hoverClass: "ui-state-active",
 		drop: function( event, ui ) {
 			// AJAX role assignment and display update should go here
+			// $(this) is the <li> containing the assignment
+			var mini_icon = ui.draggable.data('miniicon')
 			$( this )
-				.append(event.srcElement);
+				.find('img').attr('src', mini_icon);
+				//.replaceWith('miniicon');
 			var assignment = $(this).attr('data-id');
 			var role = ui.draggable.data('id');
-
 			$.post(
 				'/assign-role/' + assignment + '/' + role + '/',
 				{
 
 				})
 			}
-	});
+	}
+	);
 
 
 // Assignment deletion AJAXification
