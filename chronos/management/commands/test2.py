@@ -7,7 +7,7 @@ connection = mail.get_connection()
 
 class Command(BaseCommand):
     args = '<No args needed>'
-    help = 'Notifies gueststars of upcoming support shifts'
+    help = 'Notifies rockstars of their role today'
     
     def handle(self, *args, **kwargs):
         
@@ -17,9 +17,9 @@ class Command(BaseCommand):
 
         for rockstar in rockstarsToday:
             email_body = "You're on support today! Your role is %s. \n" % rockstar.role
-            email = mail.EmailMessage('You are on support today!', email_body, 'ryan@freshbooks.com', [rockstar.person.email], connection=connection)
+            email = mail.EmailMessage('You are on support today!', email_body, 'Sandy Lai <sandy@freshbooks.com>', [rockstar.person.email], connection=connection)
+            email.send()
 
-            # send_mail("You're on support today!", "If you see this things are working", "test@localobject.com", ["nox@freshbooks.com"], fail_silently=False)
+            self.stdout.write('Successfully emailed %s at: %s \n' % (rockstar, rockstar.person.email))
 
-            self.stdout.write('Successfully emailed "%s"\n' % rockstar)
-            self.stdout.write(rockstar.person.email)
+# TODO: Figure out if I have to explicitly close the SMTP connection after the for loop -- feels like I should

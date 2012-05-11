@@ -147,10 +147,11 @@ LOGGING = {
     }
 }
 
-# EMAIL_HOST='smtp.localobject.com'
-# # EMAIL_PORT=
-# EMAIL_HOST_USER='test'
-# EMAIL_HOST_PASSWORD='supersecret'
-# EMAIL_SUBJECT_PREFIX='[Chronos] '
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'test@localobject.com'
+EMAIL_HOST_PASSWORD = 'supersecret'
+EMAIL_SUBJECT_PREFIX = '[Chronos] '
+EMAIL_USE_TLS = True
 
 AUTH_PROFILE_MODULE = 'chronos.Person'
