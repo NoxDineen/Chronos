@@ -42,7 +42,6 @@ $(document).ready(function(){
 			var mini_icon = ui.draggable.data('miniicon')
 			$( this )
 				.find('img').attr('src', mini_icon);
-				//.replaceWith('miniicon');
 			var assignment = $(this).attr('data-id');
 			var role = ui.draggable.data('id');
 			$.post(

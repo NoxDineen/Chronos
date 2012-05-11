@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from chronos.models import Role, Person, Assignment
+from chronos.models import Person, Assignment, Role
 from django.core.mail import send_mail
 import datetime
 
@@ -13,7 +13,9 @@ class Command(BaseCommand):
         tomorrow = current + datetime.timedelta(days=1)
         nextWeek = current + datetime.timedelta(days=7)
         
-        rockstarsToday = Assignment.objects.filter(person__is_support==True, date__year==current.year, date__month==current.month, date__day==current.day)
+        rockstarsToday = Assignment.objects.filter(person__is_support=True, date__year=current.year, date__month=current.month, date__day=current.day)
 
         for rockstar in rockstarsToday:
-            send_email("You're on support today!", "If you see this things are working", "sandy@freshbooks.com", "nox@freshbooks.com", fail_silently=False)
+            send_mail("You're on support today!", "If you see this things are working", "test@localobject.com", ["nox@freshbooks.com"], fail_silently=False)
+
+            self.stdout.write('Successfully emailed "%s"\n' % rockstar)

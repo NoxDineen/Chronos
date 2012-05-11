@@ -9,6 +9,7 @@ from django.core.urlresolvers import reverse
 from django.core.serializers import serialize
 from django.core.serializers.json import DjangoJSONEncoder
 from django.http import HttpResponseRedirect
+from django.contrib.admin.views.decorators import staff_member_required
 
 month_names = "January February March April May June July August September October November December"
 month_names = month_names.split()
@@ -67,12 +68,13 @@ def month(request, year=None, month=None):
 			
 	return render(request, 'chronos/month.html', dict(year=year, month=month, day=day, month_days=lst, mname=month_names[month-1], roles=roles, support_team=support_team, not_support_team=not_support_team, form=form, prev_month=prev_month, next_month=next_month))
 
-
+@staff_member_required
 def delete_assignment(request, assignment_id):
 	assignment = Assignment.objects.get(id=assignment_id)
 	assignment.delete()
 	return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
+@staff_member_required
 def assign_role(request, assignment_id, role_id):
 	assignment = Assignment.objects.get(id=assignment_id)
 	assignment.role_id = role_id

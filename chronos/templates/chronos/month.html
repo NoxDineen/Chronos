@@ -37,7 +37,7 @@
 	                    
 	                    <li class = "assignment" data-id="{{ assignment.id }}">
 	                    	<form class="delete-assignment" method="POST" action="/delete-assignment/{{ assignment.id }}/">{% csrf_token %}
-	                    		<input type="submit" value="X">
+	                    		{% if user.is_staff %}<input type="submit" value="X">{% endif %}
 	                    	<strong>{{ assignment.person }}</strong>: <img src="{{ assignment.role.icon_mini.url }}" /></form>
 	                    </li>
 

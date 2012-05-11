@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"src",
+				"srcElement"
+			],
+			[
 				"Htt",
 				"HttpResponseRedirect"
 			],
@@ -23,7 +27,7 @@
 			"file": "settings.py",
 			"settings":
 			{
-				"buffer_size": 5237,
+				"buffer_size": 5343,
 				"line_ending": "Unix"
 			}
 		},
@@ -31,24 +35,23 @@
 			"file": "urls.py",
 			"settings":
 			{
-				"buffer_size": 874,
+				"buffer_size": 954,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "chronos/admin.py",
+			"file": "chronos/management/commands/AM_email.py",
 			"settings":
 			{
-				"buffer_size": 698,
-				"line_ending": "Unix",
-				"name": "from django.contrib import Admin"
+				"buffer_size": 1970,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "chronos/views.py",
+			"file": "chronos/management/commands/PM_email.py",
 			"settings":
 			{
-				"buffer_size": 2504,
+				"buffer_size": 1614,
 				"line_ending": "Unix"
 			}
 		},
@@ -64,23 +67,7 @@
 			"file": "chronos/static/scripts/chronos.js",
 			"settings":
 			{
-				"buffer_size": 1629,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/nox/Code/API_Fix/Amanda - Tax on expenses/fix.py",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chronos/models.py",
-			"settings":
-			{
-				"buffer_size": 938,
+				"buffer_size": 1814,
 				"line_ending": "Unix"
 			}
 		},
@@ -88,7 +75,7 @@
 			"file": "chronos/templates/chronos/month.html",
 			"settings":
 			{
-				"buffer_size": 3232,
+				"buffer_size": 3493,
 				"line_ending": "Unix"
 			}
 		},
@@ -96,7 +83,7 @@
 			"file": "chronos/templates/chronos/base.html",
 			"settings":
 			{
-				"buffer_size": 1467,
+				"buffer_size": 1476,
 				"line_ending": "Unix"
 			}
 		},
@@ -104,7 +91,31 @@
 			"file": "chronos/static/styles/chronos.css",
 			"settings":
 			{
-				"buffer_size": 522,
+				"buffer_size": 559,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chronos/management/commands/test.py",
+			"settings":
+			{
+				"buffer_size": 929,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chronos/models.py",
+			"settings":
+			{
+				"buffer_size": 1009,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chronos/views.py",
+			"settings":
+			{
+				"buffer_size": 2844,
 				"line_ending": "Unix"
 			}
 		}
@@ -112,7 +123,7 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 47.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
@@ -120,7 +131,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 449.0
+		"width": 443.0
 	},
 	"console":
 	{
@@ -137,12 +148,18 @@
 	},
 	"file_history":
 	[
-		"/Users/nox/Code/timekeeper/chronos/models.py",
+		"/Users/nox/Code/API_Fixes/Nox - Add zeros to invoice numbers/fix.py",
+		"/Users/nox/Code/API_Fixes/Nox - Add zeros to invoice numbers/log_invoice_numbers.py",
+		"/Users/nox/Code/timekeeper/chronos/static/scripts/css/start/jquery-ui-1.8.18.custom.css",
+		"/Users/nox/Code/timekeeper/chronos/admin.py",
+		"/Users/nox/Code/API_Fix/Amanda - Tax on expenses/fix.py",
 		"/Users/nox/Code/timekeeper/chronos/static/scripts/css/black-tie/jquery-ui-1.8.18.custom.css",
-		"/Users/nox/Code/timekeeper/chronos/static/scripts/js/xcrf-request.js",
-		"/Users/nox/Code/timekeeper/chronos/forms.py",
+		"/Users/nox/Code/timekeeper/chronos/templates/chronos/base.html",
 		"/Users/nox/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/Users/nox/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/nox/Code/timekeeper/chronos/models.py",
+		"/Users/nox/Code/timekeeper/chronos/static/scripts/js/xcrf-request.js",
+		"/Users/nox/Code/timekeeper/chronos/forms.py",
 		"/Users/nox/Desktop/wgt_jquery.js",
 		"/Users/nox/Desktop/wgt_python.py",
 		"/Users/nox/Code/timekeeper/chronos/templates/base.html",
@@ -180,6 +197,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"mail",
+			"ui-widget",
+			"ul ",
 			"current",
 			"support",
 			"templat"
@@ -208,15 +228,15 @@
 					"file": "settings.py",
 					"settings":
 					{
-						"buffer_size": 5237,
+						"buffer_size": 5343,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2154,
-								2154
+								4560,
+								4560
 							]
 						],
 						"settings":
@@ -275,7 +295,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1749.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -285,15 +305,15 @@
 					"file": "urls.py",
 					"settings":
 					{
-						"buffer_size": 874,
+						"buffer_size": 954,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								796,
-								796
+								707,
+								707
 							]
 						],
 						"settings":
@@ -347,7 +367,9 @@
 								"Python Django": "python"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -357,150 +379,53 @@
 				},
 				{
 					"buffer": 2,
-					"file": "chronos/admin.py",
+					"file": "chronos/management/commands/AM_email.py",
 					"settings":
 					{
-						"buffer_size": 698,
+						"buffer_size": 1970,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								504,
-								504
+								296,
+								296
 							]
 						],
 						"settings":
 						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"auto_name": "from django.contrib import Admin",
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 0.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": false,
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"Python Django": "python"
-							},
-							"sublimelinter_wrap_find": true,
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "chronos/views.py",
+					"file": "chronos/management/commands/PM_email.py",
 					"settings":
 					{
-						"buffer_size": 2504,
+						"buffer_size": 1614,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								913,
-								913
+								188,
+								188
 							]
 						],
 						"settings":
 						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 0.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": false,
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"Python Django": "python"
-							},
-							"sublimelinter_wrap_find": true,
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -588,15 +513,15 @@
 					"file": "chronos/static/scripts/chronos.js",
 					"settings":
 					{
-						"buffer_size": 1629,
+						"buffer_size": 1814,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								912,
-								917
+								423,
+								423
 							]
 						],
 						"settings":
@@ -654,86 +579,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 336.0,
+						"translation.y": 416.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 6,
-					"file": "/Users/nox/Code/API_Fix/Amanda - Tax on expenses/fix.py",
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 273.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "chronos/models.py",
-					"settings":
-					{
-						"buffer_size": 938,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								893,
-								893
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 8,
 					"file": "chronos/templates/chronos/month.html",
 					"settings":
 					{
-						"buffer_size": 3232,
+						"buffer_size": 3493,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2881,
-								2881
+								2907,
+								2907
 							]
 						],
 						"settings":
@@ -791,100 +655,51 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 819.0,
+						"translation.y": 1059.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 7,
 					"file": "chronos/templates/chronos/base.html",
 					"settings":
 					{
-						"buffer_size": 1467,
+						"buffer_size": 1476,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								867,
-								867
+								1050,
+								1050
 							]
 						],
 						"settings":
 						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 0.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": false,
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"Python Django": "python"
-							},
-							"sublimelinter_wrap_find": true,
 							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
 						},
-						"translation.x": 1.0,
+						"translation.x": 15.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 8,
 					"file": "chronos/static/styles/chronos.css",
 					"settings":
 					{
-						"buffer_size": 522,
+						"buffer_size": 559,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								519,
-								519
+								556,
+								556
 							]
 						],
 						"settings":
@@ -942,7 +757,144 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
+						"translation.y": 214.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 9,
+					"file": "chronos/management/commands/test.py",
+					"settings":
+					{
+						"buffer_size": 929,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								809,
+								809
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 367.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "chronos/models.py",
+					"settings":
+					{
+						"buffer_size": 1009,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								905,
+								905
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "chronos/views.py",
+					"settings":
+					{
+						"buffer_size": 2844,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2621,
+								2621
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 0.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Python Django": "python"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 684.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
