@@ -16,6 +16,25 @@ month_names = "January February March April May June July August September Octob
 month_names = month_names.split()
 
 def month(request, year=None, month=None):
+	if request.method == 'POST':
+		form = AssignmentForm(request.POST)
+		if form.is_valid():
+			new_assignment = Assignment()
+			form.save()
+
+			if request.is_ajax():
+				data = simplejson.dump(
+					{'date': new_assignment.date,
+					'person': new_assignment.person,
+					'role': new_assignment.role}, 
+					cls=DjangoJSONEncoder
+					)
+				return HttpResponse(data, mimetype='application/json')
+			else:
+				return HttpResponseRedirect('/%d/%d' % (year, month))
+	else:
+		form = AssignmentForm()
+
 	if year is None or month is None:
 		now = datetime.datetime.now()
 		year = now.year
@@ -44,25 +63,6 @@ def month(request, year=None, month=None):
 		if len(lst[week]) == 7:
 			lst.append([])
 			week+=1
-
-	if request.method == 'POST':
-		form = AssignmentForm(request.POST)
-		if form.is_valid():
-			new_assignment = Assignment()
-			form.save()
-
-			if request.is_ajax():
-				data = simplejson.dump(
-					{'date': new_assignment.date,
-					'person': new_assignment.person,
-					'role': new_assignment.role}, 
-					cls=DjangoJSONEncoder
-					)
-				return HttpResponse(data, mimetype='application/json')
-			else:
-				return HttpResponseRedirect('/%d/%d' % (year, month))
-	else:
-		form = AssignmentForm()
 
 	current = datetime.datetime(year, month, 1)
 	next_month = current + datetime.timedelta(days=31)

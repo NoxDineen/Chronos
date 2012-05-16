@@ -12,19 +12,20 @@ $(document).ready(function(){
 		drop: function( event, ui ) {
 			// AJAX assignment creation and display should go here
 			$( this )
-				.addClass( "ui-state-highlight" )
+				// .addClass( "ui-state-highlight" )
 				.find( ".assignments" )
 					.append(event.srcElement);
+			
 			var date = $(this).attr('data-id');
 			var person = $(event.srcElement).attr('data-id');
-
+			var url = $(location).attr('href'); // grabbing URL for .post since this JS is called on multiple pages
 			if(ui.draggable.hasClass('support')) {
 				var role = '7';
 			}
 			else {
 				role = '3';
 			}
-			$.post("/", {
+			$.post("url", {
 				role: role,
 				date: date,
 				person: person
