@@ -1,5 +1,5 @@
 from chronos.models import *
-from chronos.forms import AssignmentForm
+from chronos.forms import AssignmentForm, PersonForm
 import datetime
 import calendar
 import time
@@ -8,6 +8,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.core.urlresolvers import reverse
 from django.core.serializers import serialize
 from django.core.serializers.json import DjangoJSONEncoder
+from django.utils import simplejson
 from django.http import HttpResponseRedirect
 from django.contrib.admin.views.decorators import staff_member_required
 
@@ -47,6 +48,7 @@ def month(request, year=None, month=None):
 	if request.method == 'POST':
 		form = AssignmentForm(request.POST)
 		if form.is_valid():
+			new_assignment = Assignment()
 			form.save()
 
 			if request.is_ajax():
@@ -80,3 +82,14 @@ def assign_role(request, assignment_id, role_id):
 	assignment.role_id = role_id
 	assignment.save()
 	return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+@staff_member_required
+def create_user(request):
+	if request.method == 'POST':
+		form = PersonForm(request.POST)
+		if form.is_valid:
+			form.save()
+	else:
+		form = PersonForm()
+
+	return render(request, 'chronos/create-user.html', { 'form' : form})

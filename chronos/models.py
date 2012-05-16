@@ -5,6 +5,7 @@ class Person(models.Model):
 	last_name = models.CharField(max_length=255)
 	email = models.EmailField(max_length=255)
 	is_support = models.BooleanField(default=False)
+	# is_active = models.BooleanField(default=True)
 
 	class Meta:
 		verbose_name_plural = 'people'

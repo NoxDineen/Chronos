@@ -24,14 +24,19 @@ $(document).ready(function(){
 			else {
 				role = '3';
 			}
-			$('#id_date').attr('value', date);
-			$('#id_person').attr('value', person);
-			$('#id_role').attr('value', role);
-			$('#assignment-form').submit();
-			event.preventDefault();
+			$.post("/", {
+				role: role,
+				date: date,
+				person: person
+			});
+			// $('#id_date').attr('value', date);
+			// $('#id_person').attr('value', person);
+			// $('#id_role').attr('value', role);
+			// $('#assignment-form').submit();
+			
+			// event.preventDefault();
 		}
-	}
-	);
+	});
 
 	$(".assignment").droppable({
 		accept: ".role",
@@ -51,8 +56,7 @@ $(document).ready(function(){
 				})
 			event.preventDefault();
 			}
-	}
-	);
+	});
 
 // Assignment deletion AJAXification
 	$('.delete-assignment').submit(

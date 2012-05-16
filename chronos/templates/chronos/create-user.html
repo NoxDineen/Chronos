@@ -1,0 +1,25 @@
+{% extends "chronos/base.html" %}
+
+{% block content %}
+{% if user.is_staff %}
+<h1>Add a new user</h1>
+
+	<form id="new-user" action="" method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Add user">
+	</form>
+{% else %}
+<p>Sorry, you need to <a href="/admin/">log in</a> to add users.</p>
+{% endif %}
+
+{% endblock content %}
+
+{% block sidebar %}
+{% endblock sidebar %}
+
+{% block menu %}
+{% endblock menu %}
+
+{% block footer %}
+{% endblock footer %}
