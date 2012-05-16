@@ -3,14 +3,15 @@
 {% block content %}
 {% if user.is_staff %}
 <h1>Add a new user</h1>
-
+<h4>All fields are required</h4>
 	<form id="new-user" action="" method="post">
 		{% csrf_token %}
 		{{ form.as_p }}
-		<input type="submit" value="Add user">
+		<input id="add_continue" type="submit" value="Add &amp; Continue">
+		<input id="add_close"type="submit" value="Add &amp; Close">
 	</form>
 {% else %}
-<p>Sorry, you need to <a href="/admin/">log in</a> to add users.</p>
+<p><a href="/admin/">Log in</a> to add users.</p>
 {% endif %}
 
 {% endblock content %}

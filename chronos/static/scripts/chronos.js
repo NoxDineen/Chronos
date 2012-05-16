@@ -75,6 +75,6 @@ $(document).ready(function(){
 	}
 	);
 
-	$( "#accordion" ).accordion({ active: 1 });
+	$( "#accordion" ).accordion({ active: 1 });	
 
 });

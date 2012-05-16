@@ -89,6 +89,7 @@ def create_user(request):
 		form = PersonForm(request.POST)
 		if form.is_valid:
 			form.save()
+			return HttpResponseRedirect('/create-user/')
 	else:
 		form = PersonForm()
 
