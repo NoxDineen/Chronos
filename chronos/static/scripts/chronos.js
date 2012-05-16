@@ -34,7 +34,7 @@ $(document).ready(function(){
 			// $('#id_role').attr('value', role);
 			// $('#assignment-form').submit();
 			
-			// event.preventDefault();
+			event.preventDefault();
 		}
 	});
 
@@ -76,5 +76,9 @@ $(document).ready(function(){
 	);
 
 	$( "#accordion" ).accordion({ active: 1 });	
+
+	$('#add_close').click(function() {
+		window.close();
+	});
 
 });

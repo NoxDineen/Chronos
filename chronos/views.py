@@ -71,6 +71,12 @@ def month(request, year=None, month=None):
 	return render(request, 'chronos/month.html', dict(year=year, month=month, day=day, month_days=lst, mname=month_names[month-1], roles=roles, support_team=support_team, not_support_team=not_support_team, form=form, prev_month=prev_month, next_month=next_month))
 
 @staff_member_required
+def create_assignment(request):
+	assignment = Assignment(request.POST)
+	assignment.save()
+	return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+@staff_member_required
 def delete_assignment(request, assignment_id):
 	assignment = Assignment.objects.get(id=assignment_id)
 	assignment.delete()
