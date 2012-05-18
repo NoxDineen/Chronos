@@ -13,7 +13,7 @@ $(document).ready(function(){
 			$( this )
 				// .addClass( "ui-state-highlight" )
 				.find( ".assignments" )
-					.append($(event.srcElement).clone());
+					.append(event.srcElement);
 			
 			var date = $(this).attr('data-id');
 			var person = $(event.srcElement).attr('data-id');
@@ -73,7 +73,7 @@ $(document).ready(function(){
 	}
 	);
 
-	$( "#accordion" ).accordion({ active: 1 });	
+	$( "#accordion" ).accordion({ active: 1 });	// 1 is the Rockstars section, most commonly used by managers
 
 	$('#add_close').click(function() {
 		window.close();

@@ -30,6 +30,15 @@
 .assignments {
 	font-size: 0.8em;
 }
+.assignments form {
+	 margin: 0;
+	 padding: 0;
+}
+
+.assignment li {
+	 margin: 0;
+	 padding: 0;
+ }
 
 #sidebar {
 	float: right;
