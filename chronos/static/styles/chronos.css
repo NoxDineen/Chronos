@@ -29,6 +29,7 @@
 
 .assignments {
 	font-size: 0.8em;
+	min-height: 40px;
 }
 .assignments form {
 	 margin: 0;
