@@ -1,4 +1,4 @@
-from chronos.models import *
+from chronos.models import Role, Person, Assignment
 from chronos.forms import AssignmentForm, PersonForm
 import datetime
 import calendar
@@ -6,11 +6,11 @@ import time
 from django.shortcuts import get_object_or_404, render_to_response, render
 from django.contrib.auth.forms import AuthenticationForm
 from django.core.urlresolvers import reverse
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.admin.views.decorators import staff_member_required
 from django.core.serializers import serialize
 from django.core.serializers.json import DjangoJSONEncoder
 from django.utils import simplejson
-from django.http import HttpResponseRedirect
-from django.contrib.admin.views.decorators import staff_member_required
 
 month_names = "January February March April May June July August September October November December"
 month_names = month_names.split()
@@ -30,7 +30,7 @@ def month(request, year=None, month=None):
 			form.save()
 
 			if request.is_ajax():
-				data = simplejson.dump(
+				data = simplejson.dumps(
 					{'date': new_assignment.date,
 					'person': new_assignment.person,
 					'role': new_assignment.role}, 
@@ -70,11 +70,11 @@ def month(request, year=None, month=None):
 			
 	return render(request, 'chronos/month.html', dict(year=year, month=month, day=day, month_days=lst, mname=month_names[month-1], roles=roles, support_team=support_team, not_support_team=not_support_team, form=form, prev_month=prev_month, next_month=next_month))
 
-@staff_member_required
-def create_assignment(request):
-	assignment = Assignment(request.POST)
-	assignment.save()
-	return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+# @staff_member_required
+# def create_assignment(request):
+# 	assignment = Assignment(request.POST)
+# 	assignment.save()
+# 	return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 @staff_member_required
 def delete_assignment(request, assignment_id):

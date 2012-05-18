@@ -1,68 +1,47 @@
 $(document).ready(function(){
 	$("#sidebar li").draggable({
-		revert: true,
+		revert: false,
 		cursor: 'move',
 		appendTo: 'body',
         helper: 'clone'
 	});
 
-$("#main-content #month td").droppable({
+	$("#main-content #month td").droppable({
 		accept: ".support, .not_support",
 		hoverClass: "ui-state-active",
 		drop: function( event, ui ) {
-			// AJAX assignment creation and display should go here
 			$( this )
-				.addClass( "ui-state-highlight" )
+				// .addClass( "ui-state-highlight" )
 				.find( ".assignments" )
-					.append(event.srcElement);
+					.append($(event.srcElement).clone());
+			
 			var date = $(this).attr('data-id');
 			var person = $(event.srcElement).attr('data-id');
+			if(ui.draggable.hasClass('support')) {
+				var role = '7';
+			}
+			else {
+				role = '3';
+			}
+
 			$('#id_date').attr('value', date);
 			$('#id_person').attr('value', person);
+			$('#id_role').attr('value', role);
 			$('#assignment-form').submit();
+
+			// This is what I need to use eventually, cheating with simple form submit for now to get things working
+			// $.post('/', {
+			// 	role: role,
+			// 	date: date,
+			// 	person: person
+			// });
 		}
 	});
-
-
-	// $("#main-content #month td").droppable({
-	// 	accept: ".support, .not_support",
-	// 	hoverClass: "ui-state-active",
-	// 	drop: function( event, ui ) {
-	// 		$( this )
-	// 			.addClass( "ui-state-highlight" )
-	// 			.find( ".assignments" )
-	// 				.append(event.srcElement);
-			
-	// 		// var date = $(this).attr('data-id');
-	// 		// var person = $(event.srcElement).attr('data-id');
-	// 		// var url = $(location).attr('href'); // grabbing URL for .post since this JS is called on multiple pages
-	// 		// if(ui.draggable.hasClass('support')) {
-	// 		// 	var role = '7';
-	// 		// }
-	// 		// else {
-	// 		// 	role = '3';
-	// 		// }
-	// 		// $.post(url, {
-	// 		// 	role: role,
-	// 		// 	date: date,
-	// 		// 	person: person
-	// 		// });
-
-
-	// 		// $('#id_date').attr('value', date);
-	// 		// $('#id_person').attr('value', person);
-	// 		// $('#id_role').attr('value', role);
-	// 		// $('#assignment-form').submit();
-			
-	// 		// event.preventDefault();
-	// 	}
-	// });
 
 	$(".assignment").droppable({
 		accept: ".role",
 		hoverClass: "ui-state-active",
 		drop: function( event, ui ) {
-			// AJAX role assignment and display update should go here
 			// $(this) is the <li> containing the assignment
 			var mini_icon = ui.draggable.data('miniicon')
 			$( this )
@@ -78,7 +57,6 @@ $("#main-content #month td").droppable({
 			}
 	});
 
-// Assignment deletion AJAXification
 	$('.delete-assignment').submit(
 		function( event ) {
 			var assignment = $(this).parent().data('id');

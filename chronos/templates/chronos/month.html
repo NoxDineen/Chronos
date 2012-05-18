@@ -63,14 +63,8 @@
 {% endblock content %}
 
 	{% block sidebar %} 
-
-	{% comment %}
-	Login form needs to go here. Drag/drop functionality needs to be limited to only those logged in with manager or higher authentication.
-	{% endcomment %}
-
 	
-	
-		{% if user.is_staff %} {% comment %}This is a shitty way to do this, since an unauthenticated user can still hit the AJAX endpoint I'll be adding and thus create an Assignment without authenticating.{% endcomment %}
+		{% if user.is_staff %} 
 
 	<div id="accordion" width="25%">
 
@@ -102,5 +96,16 @@
 		</div>
 	</div>
 	<p><a href="javascript:void(0)"onclick="window.open('/create-user/','linkname','height=380, width=300,scrollbars=no')">Create a new user</a></p>
+
+	{% else %}
+
+	<h3 id="role-legend">Role Legend</h3>
+
+		<ul id ="role_icons">
+			{% for role in roles %}
+			<li class="role" data-id="{{ role.id }}" data-miniicon="{{ role.icon_mini.url }}"><img src="{{ role.icon.url }}" /> {{ role.name }}</li>
+			{% endfor %}
+			</ul>
+
 	{% endif %}
 	{% endblock sidebar %} 
