@@ -6,38 +6,57 @@ $(document).ready(function(){
         helper: 'clone'
 	});
 
-	$("#main-content #month td").droppable({
+$("#main-content #month td").droppable({
 		accept: ".support, .not_support",
 		hoverClass: "ui-state-active",
 		drop: function( event, ui ) {
 			// AJAX assignment creation and display should go here
 			$( this )
-				// .addClass( "ui-state-highlight" )
+				.addClass( "ui-state-highlight" )
 				.find( ".assignments" )
 					.append(event.srcElement);
-			
 			var date = $(this).attr('data-id');
 			var person = $(event.srcElement).attr('data-id');
-			var url = $(location).attr('href'); // grabbing URL for .post since this JS is called on multiple pages
-			if(ui.draggable.hasClass('support')) {
-				var role = '7';
-			}
-			else {
-				role = '3';
-			}
-			$.post("url", {
-				role: role,
-				date: date,
-				person: person
-			});
-			// $('#id_date').attr('value', date);
-			// $('#id_person').attr('value', person);
-			// $('#id_role').attr('value', role);
-			// $('#assignment-form').submit();
-			
-			event.preventDefault();
+			$('#id_date').attr('value', date);
+			$('#id_person').attr('value', person);
+			$('#assignment-form').submit();
 		}
 	});
+
+
+	// $("#main-content #month td").droppable({
+	// 	accept: ".support, .not_support",
+	// 	hoverClass: "ui-state-active",
+	// 	drop: function( event, ui ) {
+	// 		$( this )
+	// 			.addClass( "ui-state-highlight" )
+	// 			.find( ".assignments" )
+	// 				.append(event.srcElement);
+			
+	// 		// var date = $(this).attr('data-id');
+	// 		// var person = $(event.srcElement).attr('data-id');
+	// 		// var url = $(location).attr('href'); // grabbing URL for .post since this JS is called on multiple pages
+	// 		// if(ui.draggable.hasClass('support')) {
+	// 		// 	var role = '7';
+	// 		// }
+	// 		// else {
+	// 		// 	role = '3';
+	// 		// }
+	// 		// $.post(url, {
+	// 		// 	role: role,
+	// 		// 	date: date,
+	// 		// 	person: person
+	// 		// });
+
+
+	// 		// $('#id_date').attr('value', date);
+	// 		// $('#id_person').attr('value', person);
+	// 		// $('#id_role').attr('value', role);
+	// 		// $('#assignment-form').submit();
+			
+	// 		// event.preventDefault();
+	// 	}
+	// });
 
 	$(".assignment").droppable({
 		accept: ".role",

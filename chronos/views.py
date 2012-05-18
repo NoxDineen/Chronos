@@ -16,6 +16,13 @@ month_names = "January February March April May June July August September Octob
 month_names = month_names.split()
 
 def month(request, year=None, month=None):
+	if year is None or month is None:
+		now = datetime.datetime.now()
+		year = now.year
+		month = now.month
+	else:
+		year, month = int(year), int(month)
+
 	if request.method == 'POST':
 		form = AssignmentForm(request.POST)
 		if form.is_valid():
@@ -34,13 +41,6 @@ def month(request, year=None, month=None):
 				return HttpResponseRedirect('/%d/%d' % (year, month))
 	else:
 		form = AssignmentForm()
-
-	if year is None or month is None:
-		now = datetime.datetime.now()
-		year = now.year
-		month = now.month
-	else:
-		year, month = int(year), int(month)
 
 	support_team = Person.objects.filter(is_support=True)
 	not_support_team = Person.objects.filter(is_support=False)
