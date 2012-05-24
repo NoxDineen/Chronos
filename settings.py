@@ -146,4 +146,7 @@ EMAIL_USE_TLS = True
 
 AUTH_PROFILE_MODULE = 'chronos.Person'
 
-from settings_local import *
+try:
+    from settings_local import *
+except ImportError, e:
+    print 'Unable to load local_settings.py:', e
