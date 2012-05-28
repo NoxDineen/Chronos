@@ -74,6 +74,8 @@ $(document).ready(function(){
 	);
 
 	$( "#accordion" ).accordion({ active: 1 });	// 1 is the Rockstars section, most commonly used by managers
+  
+	$( "#accordion2" ).accordion();	
 
 	$('#add_close').click(function() {
 		window.close();

@@ -1,4 +1,4 @@
 *.pyc
 settings_local.py
-media/
-timedb
+timekeeper/media/
+timekeeper/timedb

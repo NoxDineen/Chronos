@@ -12,16 +12,25 @@ ADMINS = (
 MANAGERS = ADMINS
 
 
-#DATABASES = {
-    #'default': {
-        #'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        #'NAME': 'chronos',                      # Or path to database file if using sqlite3.
-        #'USER': 'chronos_admin',                      # Not used with sqlite3.
-        #'PASSWORD': 'u|9!X0680wJk6~<=187f',                  # Not used with sqlite3.
-        #'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        #'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    #}
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'chronos',                      # Or path to database file if using sqlite3.
+        'USER': 'chronos_admin',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
+
+        'schedgy': {
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'schedgy',                      # Or path to database file if using sqlite3.
+        'USER': '',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
+}
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -47,7 +56,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/Users/nox/Code/ChronosApp/Timekeeper/media/'
+MEDIA_ROOT = '/Users/nox/Code/ChronosApp/timekeeper/Timekeeper/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -77,7 +86,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/Users/nox/Code/ChronosApp/timekeeper/chronos/static",
+    "/Users/nox/Code/ChronosApp/timekeeper/timekeeper/chronos/static",
 )
 
 # List of finder classes that know how to find static files in
@@ -112,7 +121,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-     '/users/nox/code/ChronosApp/timekeeper/chronos/templates'
+     '/users/nox/code/ChronosApp/timekeeper/timekeeper/chronos/templates'
 )
 
 INSTALLED_APPS = (

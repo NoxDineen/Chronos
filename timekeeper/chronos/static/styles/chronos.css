@@ -1,7 +1,18 @@
-#main-content {
-	font-family: helvetica, tahoma, sans-serif;
+body {
+	font-family: verdana, helvetica, tahoma, sans-serif;
 }
 
+#main-content {
+	font-family: verdana, helvetica, tahoma, sans-serif;
+}
+
+#month_header {
+  text-align: center;
+}
+
+#month_header a {
+  text-decoration: none;;
+}
 #menu {
 	float: right;
 	width: 160px;
