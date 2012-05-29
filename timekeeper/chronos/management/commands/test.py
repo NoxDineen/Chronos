@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from timekeeper.chronos.models import Person, Assignment, Role
+from chronos.models import Person, Assignment, Role
 from django.core.mail import send_mail
 import datetime
 

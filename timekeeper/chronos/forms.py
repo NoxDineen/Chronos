@@ -1,5 +1,5 @@
 from django import forms
-from timekeeper.chronos.models import Assignment, Person
+from chronos.models import Assignment, Person
 
 class AssignmentForm(forms.ModelForm):
 	class Meta:

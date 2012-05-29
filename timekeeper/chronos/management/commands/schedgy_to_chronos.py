@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from timekeeper.chronos.models import Person, Assignment, Role
+from chronos.models import Person, Assignment, Role
 from schedgy.models import Users, Assignments as SchedgyAssignment, Days
 from django.core import mail
 import datetime

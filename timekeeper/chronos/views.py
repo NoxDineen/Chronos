@@ -1,5 +1,5 @@
-from timekeeper.chronos.models import Role, Person, Assignment
-from timekeeper.chronos.forms import AssignmentForm, PersonForm
+from chronos.models import Role, Person, Assignment
+from chronos.forms import AssignmentForm, PersonForm
 import datetime
 import calendar
 import time

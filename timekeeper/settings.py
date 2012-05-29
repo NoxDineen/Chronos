@@ -1,7 +1,7 @@
 # Django settings for timekeeper project.
 import os
 
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -20,9 +20,9 @@ DATABASES = {
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
+    },
 
-        'schedgy': {
+    'schedgy': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'schedgy',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
@@ -56,7 +56,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/Users/nox/Code/ChronosApp/timekeeper/Timekeeper/media/'
+MEDIA_ROOT = '/Users/nox/Code/ChronosApp/timekeeper/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -86,7 +86,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/Users/nox/Code/ChronosApp/timekeeper/timekeeper/chronos/static",
+     '/Users/nox/Code/ChronosApp/timekeeper/static',
 )
 
 # List of finder classes that know how to find static files in
@@ -121,7 +121,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-     '/users/nox/code/ChronosApp/timekeeper/timekeeper/chronos/templates'
+    '/users/nox/code/ChronosApp/timekeeper/templates/'
 )
 
 INSTALLED_APPS = (
@@ -135,7 +135,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'timekeeper.chronos',
+    'chronos',
 )
 
 # A sample logging configuration. The only tangible logging

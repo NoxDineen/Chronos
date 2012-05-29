@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>{% block title %} Chronos - GJST! {% endblock title %}</title></head>
+<link type="text/css" href="{{ STATIC_URL }}styles/chronos.css" rel="stylesheet" />
+<link type="text/css" href="{{ STATIC_URL }}styles/jquery-ui-1.8.18.custom.css" rel="Stylesheet" />	
+
+<body>
+	<div id="main-content">
+		{% block content %} {% endblock content %}
+	</div>
+
+	<div id="sidebar">
+		{% block sidebar %}  {% endblock sidebar %} 
+
+		<div id="menu">
+		{% block menu %}
+            <h3>Menu</h3>
+                {% if user.is_staff %}
+                	<p>You're logged in as {{ user.first_name }}. <a href="/admin/logout/">Click here to logout.</a></p>
+                {% else %}
+                	<p>Managers, <a href="/admin/">log in</a> to access team lists and set schedules.</p>
+                {% endif %}
+
+            {% endblock menu %}
+        </div>
+
+	</div>
+
+	<div id="footer">
+		{% block footer %}
+		<p> Thanks for using Chronos. Make your <a href="https://freshbooks.wufoo.eu/forms/schedgy-20-wishlist-for-nox/">wishes</a> here. </p>
+
+		{% endblock footer %}
+	</div>
+
+	<script type="text/javascript" src="{{ STATIC_URL }}scripts/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}scripts/jquery-ui-1.8.18.custom.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}scripts/chronos.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}scripts/xcrf-request.js"></script>
+</body>
+</html>
