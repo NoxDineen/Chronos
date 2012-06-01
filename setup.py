@@ -13,5 +13,6 @@ setup(
     long_description='Sample Django Project',
     install_requires=[
             'django==1.4',
+            'South==0.7.5',
     ]
 )
