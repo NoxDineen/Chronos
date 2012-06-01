@@ -1,0 +1,4 @@
+timekeeper/timedb
+*.pyc
+timekeeper/settings_local.py
+timekeeper/prod_passwords.py
