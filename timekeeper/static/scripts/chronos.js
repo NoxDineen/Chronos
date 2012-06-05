@@ -18,10 +18,10 @@ $(document).ready(function(){
 			var date = $(this).attr('data-id');
 			var person = $(event.srcElement).attr('data-id');
 			if(ui.draggable.hasClass('support')) {
-				var role = '7';
+				var role = '1';
 			}
 			else {
-				role = '3';
+				role = '1';
 			}
 
 			$('#id_date').attr('value', date);
