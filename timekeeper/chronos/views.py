@@ -40,7 +40,7 @@ def month(request, year=None, month=None):
 			else:
 				return HttpResponseRedirect('/%d/%d' % (year, month))
 	else:
-		form = AssignmentForm()
+		form = AssignmentForm(initial={'role': 1})
 
 	support_team = Person.objects.filter(is_support=True)
 	not_support_team = Person.objects.filter(is_support=False)
