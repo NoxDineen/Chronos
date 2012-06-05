@@ -10,9 +10,6 @@ setup(
     url = "https://wiki.2ndsiteinc.com/display/Support/Chronos+1.0",
     packages=find_packages(),
     include_package_data=True,
-    long_description='Sample Django Project',
-    install_requires=[
-            'django==1.4',
-            'South==0.7.5',
-    ]
+    long_description='Support team scheduling',
+    install_requires=open('requirements.txt').readlines()
 )
