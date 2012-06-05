@@ -3,3 +3,6 @@ timekeeper/timedb
 timekeeper/settings_local.py
 timekeeper/prod_passwords.py
 timekeeper/media
+build
+dist
+Chronos.egg-info
