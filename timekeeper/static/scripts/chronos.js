@@ -21,7 +21,7 @@ $(document).ready(function(){
 				var role = '1';
 			}
 			else {
-				role = '1';
+				role = '7';
 			}
 
 			$('#id_date').attr('value', date);
