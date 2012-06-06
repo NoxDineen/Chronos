@@ -8,3 +8,5 @@ dist
 Chronos.egg-info
 
 timekeeper/settings_local.py
+
+timekeeper/settings_local.py
