@@ -6,3 +6,5 @@ timekeeper/media
 build
 dist
 Chronos.egg-info
+
+timekeeper/settings_local.py
