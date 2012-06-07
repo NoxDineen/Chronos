@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='Chronos',
-    version='1.0',
+    version='0.9',
     author = "Nox Dineen",
     author_email = "nox@freshbooks.com",
     license = "BSD",
