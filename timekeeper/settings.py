@@ -1,7 +1,10 @@
-# Django settings for timekeeper project.
 import os
+from ConfigParser import RawConfigParser
 
-DEBUG = True
+config = RawConfigParser()
+config.read('/home/chronos/settings.ini')
+
+DEBUG = False
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -11,26 +14,28 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+SESSION_COOKIE_DOMAIN = config.get('cookies','SESSION_COOKIE_DOMAIN')
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'chronos',                      # Or path to database file if using sqlite3.
-        'USER': 'chronos_admin',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': config.get('database', 'CHRONOS_DBENGINE'),
+        'NAME': config.get('databases', 'CHRONOS_DATABASE'),
+        'USER': config.get('databases', 'CHRONOS_DBUSER'),
+        'PASSWORD': config.get('databases', 'CHRONOS_DBPASSWORD'),
+        'HOST': config.get('databases', 'CHRONOS_DBHOST'),
     },
 
     'schedgy': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'schedgy',                      # Or path to database file if using sqlite3.
-        'USER': 'nox',                      # Not used with sqlite3.
-        'PASSWORD': 'art3mis42',                  # Not used with sqlite3.
-        'HOST': 'nas01.2ndsiteinc.com',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
+        'ENGINE': config.get('database', 'SCHEDGY_DBENGINE'),
+        'NAME': config.get('databases', 'SCHEDGY_DATABASE'),
+        'USER': config.get('databases', 'SCHEDGY_DBUSER'),
+        'PASSWORD': config.get('databases', 'SCHEDGY_DBPASSWORD'),
+        'HOST': config.get('databases', 'SCHEDGY_DBHOST'),
 }
+
+
+# TEST_DATABASE_NAME = config.get('database', 'TESTSUITE_DATABASE_NAME')
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -56,7 +61,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/Users/nox/Code/ChronosApp/timekeeper/media/'
+MEDIA_ROOT = '/home/chronos/timekeeper/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -86,7 +91,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-     '/Users/nox/Code/ChronosApp/timekeeper/static',
+     '/home/chronos/timekeeper/static/',
 )
 
 # List of finder classes that know how to find static files in
@@ -98,7 +103,8 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'o!6o=t)*wr(+vdyh6(_grtp=@_xnu3wddk23qkfoz3@@eh46p0'
+SECRET_KEY = config.get('secrets','SECRET_KEY')
+# CSRF_MIDDLEWARE_SECRET = config.get('secrets', 'CSRF_MIDDLEWARE_SECRET')
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -115,13 +121,21 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
+DEBUG = config.getboolean('debug','DEBUG')
+TEMPLATE_DEBUG = config.getboolean('debug','TEMPLATE_DEBUG')
+VIEW_TEST = config.getboolean('debug', 'VIEW_TEST')
+INTERNAL_IPS = tuple(config.get('debug', 'INTERNAL_IPS').split())
+if config.getboolean('debug', 'SKIP_CSRF_MIDDLEWARE'):
+    MIDDLEWARE_CLASSES = tuple([x for x in list(MIDDLEWARE_CLASSES)
+                                  if not x.endswith('CsrfMiddleware')])
+
 ROOT_URLCONF = 'timekeeper.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/users/nox/code/ChronosApp/timekeeper/templates/'
+    '/home/chronos/timekeeper/templates/'
 )
 
 INSTALLED_APPS = (
@@ -137,6 +151,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'chronos',
     'south',
+    'gunicorn',
 )
 
 # A sample logging configuration. The only tangible logging
