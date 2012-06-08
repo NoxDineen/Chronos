@@ -12,3 +12,5 @@ timekeeper/settings_local.py
 timekeeper/settings_local.py
 
 settings.ini
+
+timekeeper/settings_backup.py
