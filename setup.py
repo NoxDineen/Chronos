@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='Chronos',
+    name='chronos',
     version='0.9',
     author = "Nox Dineen",
     author_email = "nox@freshbooks.com",
